@@ -1,0 +1,14 @@
+{
+    "institution": {
+        "label": "Institution"
+    },
+    "location": {
+        "label": "Location"
+    },
+    "major": {
+        "label": "Major"
+    },
+    "gpa": {
+        "label": "GPA"
+    }
+}

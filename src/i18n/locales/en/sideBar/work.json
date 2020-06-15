@@ -1,0 +1,11 @@
+{
+    "company": {
+        "label": "Company Name"
+    },
+    "location": {
+        "label": "Location"
+    },
+    "position": {
+        "label": "Job Title"
+    }
+}

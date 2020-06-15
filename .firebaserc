@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "simple-react-resume"
+  },
+  "targets": {
+    "simple-react-resume": {
+      "hosting": {
+        "app": [
+          "simple-react-resume"
+        ],
+        "docs": [
+          "docs-simple-react-resume"
+        ]
+      }
+    }
+  }
+}
