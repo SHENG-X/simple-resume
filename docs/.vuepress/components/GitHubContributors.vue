@@ -10,7 +10,7 @@
 
 <script>
 const axios = require('axios');
-const repo = 'AmruthPillai/Reactive-Resume';
+const repo = 'SHENG-X/simple-react-resume';
 
 export default {
   data() {
