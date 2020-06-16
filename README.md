@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/GkjBg4C.png" alt="Simple React Resume" width="256px"  height="256px"/>
 
-# Simple Reactive Resume
+# Simple React Resume
 
 ![Build & Deploy](https://github.com/Sheng-X/simple-react-resume/workflows/Build%20&%20Deploy/badge.svg)
 ![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)
