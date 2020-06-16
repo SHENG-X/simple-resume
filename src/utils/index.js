@@ -50,8 +50,8 @@ const addItem = (dispatch, key, value) => {
     dispatch({
         type: 'add_item',
         payload: {
-        key,
-        value,
+            key,
+            value,
         },
     });
 
@@ -62,8 +62,8 @@ const deleteItem = (dispatch, key, value) => {
     dispatch({
         type: 'delete_item',
         payload: {
-        key,
-        value,
+            key,
+            value,
         },
     });
 
@@ -74,8 +74,8 @@ const moveItemUp = (dispatch, key, value) => {
     dispatch({
         type: 'move_item_up',
         payload: {
-        key,
-        value,
+            key,
+            value,
         },
     });
 
@@ -86,8 +86,8 @@ const moveItemDown = (dispatch, key, value) => {
     dispatch({
         type: 'move_item_down',
         payload: {
-        key,
-        value,
+            key,
+            value,
         },
     });
 

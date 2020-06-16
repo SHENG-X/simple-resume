@@ -1,5 +1,5 @@
 ---
-title: Building from Source
+title: Build
 ---
 
 # Building from Source
@@ -24,15 +24,7 @@ v13.11.0
 
 ### 2. Clone the Repository
 
-Download the repository as an archive from GitHub, or clone the repository from the command line depending on whether you require the latest updates or not.
-
-```
-wget https://github.com/AmruthPillai/Reactive-Resume/archive/master.zip
-```
-
-<p style="text-align: center">
-  <strong>OR</strong>
-</p>
+Clone the repository from the command line for the latest updates.
 
 ```
 git clone https://github.com/AmruthPillai/Reactive-Resume.git
@@ -41,7 +33,7 @@ cd Reactive-Resume
 
 ### 3. Install Project Dependencies
 
-Install the dependencies required for the project to run. For a bird's eye view of all the dependencies it would install, you can check `package.json`.
+Install the dependencies required for the project to run. See `package.json` for all dependencies.
 
 ```
 npm install
@@ -57,8 +49,7 @@ npm start
 
 ### 5. Build Production App
 
-This will produce a production version of the app and return a folder `build` which contains static files ready to be uploaded on the web. For more info on how to deploy, go to the Deployment page.
-
+This will produce a production version of the app and return a folder `build` which contains static files ready to be uploaded on the web.
 ```
 npm build
 ```
@@ -79,7 +70,7 @@ npm run docs:dev
 
 ### 3. Build Static Documentation
 
-This will produce static files under the folder `docs/.vuepress/dist`. This folder can be uploaded anywhere such as Shared Hosting/Firebase/Netlify/Cloud etc.
+This will produce static files under the folder `docs/.vuepress/dist`.
 
 ```
 npm run docs:build

@@ -9,13 +9,13 @@
     "location": {
         "label": "Address",
         "address": {
-        "label": "Address"
+            "label": "Address"
         },
         "city": {
-        "label": "City"
+            "label": "City"
         },
         "region": {
-        "label": "Province / State"
+            "label": "Province / State"
         }
     },
     "phone": {

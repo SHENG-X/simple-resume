@@ -1,13 +1,13 @@
 {
-  "name": "Reactive Resume",
-  "description": "A one-of-a-kind resume builder that's not out to get your data. Completely secure, customizable, portable, open-source and free forever.",
-  "website": "https://rxresu.me/",
-  "repository": "https://github.com/AmruthPillai/Reactive-Resume",
-  "logo": "https://i.imgur.com/ugpElge.png",
-  "buildpacks": [
-    {
-      "url": "mars/create-react-app"
-    }
-  ],
-  "keywords": ["react", "resume", "static"]
+    "name": "Simple React Resume",
+    "description": "A free resume builder that's not out to get your data. Secure, customizable, portable, open-source.",
+    "website": "https://simple-react-resume.web.app/",
+    "repository": "https://github.com/SHENG-X/simple-react-resume",
+    "logo": "https://i.imgur.com/iIae2Na.png",
+    "buildpacks": [
+        {
+        "url": "mars/create-react-app"
+        }
+    ],
+    "keywords": ["react", "resume", "static"]
 }
