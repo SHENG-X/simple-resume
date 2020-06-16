@@ -11,6 +11,10 @@ title: Templates
     <img src="./images/Onyx.png" />
   </div>
   <div>
+    <h2 id="charizard"><a href="#charizard" class="header-anchor">#</a> Charizard</h2>
+    <img src="./images/Charizard.png" />
+  </div>
+  <div>
     <h2 id="pikachu"><a href="#pikachu" class="header-anchor">#</a> Pikachu</h2>
     <img src="./images/Pikachu.png" />
   </div>

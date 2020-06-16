@@ -4,15 +4,10 @@ title: Contributing
 
 # Contributing
 
-I've tried to make the project as simple and accessible to everyone: developers, translators and users alike. The project grows in quality and features through your feedback and support, so please do reach out to me whenever you have a new feature request, or when you find a bug, and we as a team will get it squashed as soon as possible.
+ Your feedback and support is essential for the project to grow in quality and features, so please do reach out to me whenever you have a new feature request, or when you find a bug, and we as a team will get it squashed as soon as possible.
 
 **Here are a few ways you can contribute to the project:**
 
-## Donate/Sponsor
-
-This is an open that's open to most. Even the smallest donation can help the project thrive and keep the website running. I didn't think I would ever reach my Firebase Hosting limits until I released this project, and it makes me both worried and happy.
-
-If you would like to support the development and uptime of the project, you can donate through Open Collective, which is a recognized non-profit organization that funnels in donations only to those who are verified. For example, every time you donate, I get the money only after I show an invoice related to the project expense. So you have complete transparency in where your money is going.
 ## Find & Report Bugs
 
 If you run into any trouble while using the app, just let me know by raising an issue on GitHub. The progress of fixing that bug can be tracked from there.
