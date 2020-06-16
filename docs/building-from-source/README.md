@@ -1,8 +1,8 @@
 ---
-title: Build
+title: Build the App
 ---
 
-# Building from Source
+# Building the Source
 
 So, you would like to run the project on your local machine, or your own network server? You've come to the right place. It takes about 5-6 minutes to get the project running on your local, and this is how:
 

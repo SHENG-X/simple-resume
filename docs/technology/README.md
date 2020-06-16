@@ -4,7 +4,7 @@ title: Technology
 
 # Technology
 
-A credit to all the projects and open source packages that have helped during the building of this project. Truly, without these projects, Reactive Resume wouldn't exist.
+A credit to all the projects and open source packages that have helped during the building of this project. Truly, without these projects, Simple React Resume wouldn't exist.
 
 ## ReactJS + Hooks 🎉
 
@@ -40,7 +40,7 @@ A library to generate PDFs in JavaScript.
 
 ## Google Fonts
 
-Google Fonts is a great repository of open type fonts that are allowed to be used on the web. Reactive Resume uses Google Fonts to load different font families and allow the user to choose which font he/she would like on their resume.
+Google Fonts is a great repository of open type fonts that are allowed to be used on the web. Simple React Resume uses Google Fonts to load different font families and allow the user to choose which font he/she would like on their resume.
 
 [Learn more &rarr; ](https://fonts.google.com/)
 
@@ -67,3 +67,9 @@ PurgeCSS analyzes your content and your css files. Then it matches the selectors
 VuePress is what made this documentation possible, with it's clean design and quick setup as well as the ability to use markdown to generate content, VuePress seemed like the best way to set up a cleaner documentation.
 
 [Learn more &rarr; ](https://vuepress.vuejs.org/)
+
+## Fontello
+
+Fontello is a tool to quickly pack vector images into webfonts. Consider it like Twitter Bootstrap, but for images. It builds everything necessary to include graphics into your web pages. Also, fontello has a big built-in collection of open source artworks.
+
+[Learn more &rarr; ](https://github.com/fontello/fontello)

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Reactive Resume',
+  title: 'Simple React Resume',
   description:
     "A free resume builder that's not out to get your data. Secure, customizable, portable, open-source.",
   themeConfig: {
@@ -24,7 +24,7 @@ module.exports = {
     [
       '@vuepress/google-analytics',
       {
-        ga: 'UA-161860275-1',
+        ga: 'UA-23588235-2',
       },
     ],
   ],

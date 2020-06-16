@@ -1,12 +1,14 @@
 ---
-title: Home
+title: Introduction
 ---
 
 <img src="./images/logo.png" width="256px">
 
-# Reactive Resume
+# Simple React Resume
 
 #### A Free and Open-Source Resume Builder That Respects Your Privacy
+
+__Based on:__ [Reactive Resume](https://rxresu.me/)
 
 ![Build & Deploy](https://github.com/sheng-x/simple-react-resume/workflows/Build%20&%20Deploy/badge.svg)
 ![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)

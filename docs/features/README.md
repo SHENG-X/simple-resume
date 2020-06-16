@@ -6,7 +6,7 @@ title: Features
 
 ## Secure
 
-It is entirely secure, your information never leaves the browser, powered by web technologies (HTML5 Local Storage API) that allow for data to be stored locally and quickly.
+The app is entirely secure, your information never leaves the browser, powered by web technologies (HTML5 Local Storage API) that allow for data to be stored locally and quickly.
 
 ## Offline
 
@@ -18,15 +18,11 @@ Choose your fonts, play with the colors, pick any layout by merely enabling/disa
 
 ## Templates
 
-I've been continuously designing new templates and will be releasing new ones as I have the time. Please support development by using the app and leaving a like/comment or sharing it with your peers.
+New templates will be continuously released as the app grows. Please support development by using the app and leaving a like/comment or sharing it with your peers.
 
 ## Portable
 
 Your information can be exported to JSON and imported back into the application from anywhere, all you need is your JSON file. This feature makes it easy to update your resume, upload your file (or have it preloaded from local storage), edit the resume and download it again or print it as PDF.
-
-## Minimalistic Design
-
-As a designer, I felt I had to put this over the top of all other features. Built with minimalism and minimal interaction in mind, it looks clean, is simple to use, and I only hope to make the process more streamlined through your inputs and feedback.
 
 ## Progressive Web App
 
@@ -34,4 +30,4 @@ The web app is responsive, which means you can edit your resume on your phone as
 
 ## Free and Open-Source
 
-As with all my projects, I made the app only to help others, so it will always remain free, and I would not be monetizing on it at any point. But if you do feel generous, [I'm open to donations](https://opencollective.com/reactive-resume).
+This app is free and open source, so your feedback and support is essential for the app to grow.
