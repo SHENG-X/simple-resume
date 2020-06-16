@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/iIae2Na.png" alt="Simple React Resume" width="256px"  height="256px"/>
+<img src="https://i.imgur.com/iIae2Na.png" alt="Simple React Resume" width="256px"  height="256px" style="box-shadow: 0 0 10px 5px #ccc"/>
 
 # Simple Reactive Resume
 
