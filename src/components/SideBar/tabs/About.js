@@ -7,26 +7,6 @@ const AboutTab = () => {
     return (
         <div>
             <div className="shadow text-center p-5">
-                <h6 className="font-bold text-sm mb-2">{t('about.documentation.heading')}</h6>
-
-                <div className="text-sm">{t('about.documentation.body')}</div>
-
-                <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://docs.rxresu.me/"
-                    className="flex justify-center items-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
-                >
-                    <div className="flex justify-center items-center">
-                        <i className="material-icons mr-2 font-bold text-base">description</i>
-                        <span className="text-sm">{t('about.documentation.buttons.documentation')}</span>
-                    </div>
-                </a>
-            </div>
-
-            <hr className="my-5" />
-
-            <div className="shadow text-center p-5">
                 <h6 className="font-bold text-sm mb-2">{t('about.bugOrFeatureRequest.heading')}</h6>
 
                 <div className="text-sm">{t('about.bugOrFeatureRequest.body')}</div>
