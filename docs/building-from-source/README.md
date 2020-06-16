@@ -27,8 +27,8 @@ v13.11.0
 Clone the repository from the command line for the latest updates.
 
 ```
-git clone https://github.com/AmruthPillai/Reactive-Resume.git
-cd Reactive-Resume
+git clone https://github.com/SHENG-X/simple-react-resume.git
+cd simple-react-resume
 ```
 
 ### 3. Install Project Dependencies

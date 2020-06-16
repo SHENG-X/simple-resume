@@ -15,7 +15,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/SHENG-X/Reactive-Resume/issues/new"
+                    href="https://github.com/SHENG-X/simple-react-resume/issues/new"
                     className="mt-4 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
@@ -48,7 +48,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/SHENG-X/Reactive-Resume"
+                    href="https://github.com/SHENG-X/simple-react-resume"
                     className="flex justify-center items-center mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
@@ -68,7 +68,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/SHENG-X/Reactive-Resume/blob/master/LICENSE"
+                    href="https://github.com/SHENG-X/simple-react-resume/blob/master/LICENSE"
                     className="flex justify-center items-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
