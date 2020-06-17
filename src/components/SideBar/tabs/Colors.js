@@ -65,28 +65,28 @@ const ColorsTab = ({ theme, onChange }) => {
                     style={{ backgroundColor: theme.colors.primary }}
                 />
                     <div className="col-span-5">
-                    <TextField
-                        label={t('colors.primaryColor')}
-                        placeholder="#FFFFFF"
-                        value={theme.colors.primary}
-                        onChange={v => onChange('theme.colors.primary', v)}
-                    />
-                </div>
+                        <TextField
+                            label={t('colors.primaryColor')}
+                            placeholder="#FFFFFF"
+                            value={theme.colors.primary}
+                            onChange={v => onChange('theme.colors.primary', v)}
+                        />
+                    </div>
             </div>
 
             <div className="my-6 grid grid-cols-6 items-end">
                 <div
-                    className="rounded-full w-8 h-8 mb-2 border-2"
+                    className="rounded-full w-8 h-8 mb-2 border-2 accentcolor"
                     style={{ backgroundColor: theme.colors.accent }}
                 />
                     <div className="col-span-5">
-                    <TextField
-                        label={t('colors.accentColor')}
-                        placeholder="#FFFFFF"
-                        value={theme.colors.accent}
-                        onChange={v => onChange('theme.colors.accent', v)}
-                    />
-                </div>
+                        <TextField
+                            label={t('colors.accentColor')}
+                            placeholder="#FFFFFF"
+                            value={theme.colors.accent}
+                            onChange={v => onChange('theme.colors.accent', v)}
+                        />
+                    </div>
             </div>
         </div>
     );
