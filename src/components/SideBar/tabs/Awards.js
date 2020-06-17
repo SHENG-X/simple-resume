@@ -70,31 +70,41 @@ const Form = ({ item, onChange, identifier = '' }) => {
 
             <TextField
                 className="mb-6"
-                label={t('awards.subtitle.label')}
-                placeholder="First Place, National Level"
-                value={item.subtitle}
-                onChange={v => onChange(`${identifier}subtitle`, v)}
+                label={t('awards.awarder.label')}
+                placeholder="Hacker Rank"
+                value={item.awarder}
+                onChange={v => onChange(`${identifier}awarder`, v)}
+            />
+
+            <TextField
+                className="mb-6"
+                label={t('awards.date.label')}
+                placeholder="June, 2020"
+                value={item.date}
+                onChange={v => onChange(`${identifier}date`, v)}
             />
 
             <TextArea
                 className="mb-6"
-                label={t('app:item.description.label')}
-                value={item.description}
-                onChange={v => onChange(`${identifier}description`, v)}
+                label={t('app:item.summary.label')}
+                value={item.summary}
+                onChange={v => onChange(`${identifier}summary`, v)}
             />
         </div>
     );
 };
 
 const AddItem = ({ heading, dispatch }) => {
-    const [isOpen, setOpen] = useState(false);
-    const [item, setItem] = useState({
+    const awardItem = {
         id: uuidv4(),
         enable: true,
         title: '',
-        subtitle: '',
-        description: '',
-    });
+        awarder: '',
+        date: '',
+        summary: ''
+    };
+    const [isOpen, setOpen] = useState(false);
+    const [item, setItem] = useState({ ...awardItem });
 
     const onChange = (key, value) => setItem(set({ ...item }, key, value));
 
@@ -103,13 +113,7 @@ const AddItem = ({ heading, dispatch }) => {
 
         addItem(dispatch, 'awards', item);
 
-        setItem({
-            id: uuidv4(),
-            enable: true,
-            title: '',
-            subtitle: '',
-            description: '',
-        });
+        setItem({ ...awardItem });
 
         setOpen(false);
     };

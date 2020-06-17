@@ -10,7 +10,7 @@
 
 <script>
 const axios = require('axios');
-const repo = 'SHENG-X/simple-react-resume';
+const repo = 'SHENG-X/simple-resume';
 
 export default {
   data() {

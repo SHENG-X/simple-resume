@@ -104,9 +104,12 @@ const Onyx = () => {
 
     const AwardItem = x => (
         <div key={x.id} className="mt-3">
-            <h6 className="font-semibold">{x.title}</h6>
-            <p className="text-xs">{x.subtitle}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <div className="flex justify-between">
+                <h6 className="font-semibold">{x.title}</h6>
+                <p className="text-xs font-medium" style={{'whiteSpace': 'nowrap'}}>{x.date}</p>
+            </div>
+            <p className="text-xs">{x.awarder}</p>
+            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
         </div>
     );
 
@@ -121,9 +124,12 @@ const Onyx = () => {
 
     const CertificationItem = x => (
         <div key={x.id} className="mt-3">
-            <h6 className="font-semibold">{x.title}</h6>
-            <p className="text-xs">{x.subtitle}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <div className="flex justify-between">
+                <h6 className="font-semibold">{x.title}</h6>
+                <p className="text-xs font-medium">{x.date}</p>
+            </div>
+            <p className="text-xs">{x.issuer}</p>
+            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
         </div>
     );
 

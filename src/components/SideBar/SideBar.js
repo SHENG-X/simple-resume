@@ -174,6 +174,7 @@ const Sidebar = () => {
                 return <ActionsTab 
                     data={data} 
                     theme={theme} 
+                    config={config}
                     dispatch={dispatch} 
                 />;
             case 'settings':

@@ -9,6 +9,9 @@
         },
         "description": {
             "label": "Description"
+        },
+        "summary": {
+            "label": "Summay"
         }
     },
     "buttons": {

@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  reactive-resume:
-    container_name: reactive-resume
+  simple-react-resume:
+    container_name: simple-react-resume
     build:
       context: .
       dockerfile: Dockerfile

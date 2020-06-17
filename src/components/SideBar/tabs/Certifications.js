@@ -61,38 +61,49 @@ const Form = ({ item, onChange, identifier = '' }) => {
             <TextField
                 className="mb-6"
                 label={t('certifications.title.label')}
-                placeholder="CS50: Intro to Computer Science"
+                placeholder="DCUCI 642-999"
                 value={item.title}
                 onChange={v => onChange(`${identifier}title`, v)}
+            />
+            
+            <TextField
+                className="mb-6"
+                label={t('certifications.issuer.label')}
+                placeholder="Cisco Systems"
+                value={item.issuer}
+                onChange={v => onChange(`${identifier}issuer`, v)}
             />
 
             <TextField
                 className="mb-6"
-                label={t('certifications.subtitle.label')}
-                placeholder="Harvard University"
-                value={item.subtitle}
-                onChange={v => onChange(`${identifier}subtitle`, v)}
+                label={t('certifications.date.label')}
+                placeholder="Jan, 2020"
+                value={item.date}
+                onChange={v => onChange(`${identifier}date`, v)}
             />
+
 
             <TextArea
                 className="mb-6"
-                label={t('app:item.description.label')}
-                value={item.description}
-                onChange={v => onChange(`${identifier}description`, v)}
+                label={t('app:item.summary.label')}
+                value={item.summary}
+                onChange={v => onChange(`${identifier}summary`, v)}
             />
         </div>
     );
 };
 
 const AddItem = ({ heading, dispatch }) => {
-    const [isOpen, setOpen] = useState(false);
-    const [item, setItem] = useState({
+    const certificationItem = {
         id: uuidv4(),
         enable: true,
         title: '',
-        subtitle: '',
-        description: '',
-    });
+        issuer: '',
+        date: '',
+        summary: '',
+    };
+    const [isOpen, setOpen] = useState(false);
+    const [item, setItem] = useState({ ...certificationItem });
 
     const onChange = (key, value) => setItem(set({ ...item }, key, value));
 
@@ -101,13 +112,7 @@ const AddItem = ({ heading, dispatch }) => {
 
         addItem(dispatch, 'certifications', item);
 
-        setItem({
-            id: uuidv4(),
-            enable: true,
-            title: '',
-            subtitle: '',
-            description: '',
-        });
+        setItem({ ...certificationItem });
 
         setOpen(false);
     };

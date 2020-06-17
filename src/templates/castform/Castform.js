@@ -28,6 +28,8 @@ const Castform = () => {
     );
 
     const Address = () => (
+        (data.basics.location.address || data.basics.location.city
+        || data.basics.location.region) &&
         <div className="px-5 my-2">
             <h6 className="text-xs font-bold">Address</h6>
             <div className="text-sm">{data.basics.location.address}</div>
@@ -176,9 +178,12 @@ const Castform = () => {
 
     const AwardItem = x => (
         <div key={x.id} className="my-3 px-5">
-            <h6 className="font-semibold">{x.title}</h6>
-            <p className="text-xs">{x.subtitle}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <div className="flex justify-between">
+                <h6 className="font-semibold">{x.title}</h6>
+                <p className="text-xs font-medium">{x.date}</p>
+            </div>
+            <p className="text-xs">{x.awarder}</p>
+            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
         </div>
     );
 
@@ -193,9 +198,12 @@ const Castform = () => {
 
     const CertificationItem = x => (
         <div key={x.id} className="my-3 px-5">
-            <h6 className="font-semibold">{x.title}</h6>
-            <p className="text-xs">{x.subtitle}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <div className="flex justify-between">
+                <h6 className="font-semibold">{x.title}</h6>
+                <p className="text-xs font-medium">{x.date}</p>
+            </div>
+            <p className="text-xs">{x.issuer}</p>
+            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
         </div>
     );
 

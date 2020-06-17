@@ -1,8 +1,8 @@
 {
-    "name": "Simple React Resume",
+    "name": "Simple Resume",
     "description": "A free resume builder that's not out to get your data. Secure, customizable, portable, open-source.",
-    "website": "https://simple-react-resume.web.app/",
-    "repository": "https://github.com/SHENG-X/simple-react-resume",
+    "website": "https://simpleresume.ca",
+    "repository": "https://github.com/SHENG-X/simple-resume",
     "logo": "https://i.imgur.com/iIae2Na.png",
     "buildpacks": [
         {
