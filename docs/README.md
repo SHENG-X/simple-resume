@@ -14,7 +14,7 @@ __Based on:__ [Reactive Resume](https://rxresu.me/)
 ![Code Style](https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb)
 ![GitHub](https://img.shields.io/github/license/SHENG-X/simple-resume)
 
-Welcome to the front page of **Simple Resume**, a free and open-source Resume Builder web app that focuses on one thing, **Privacy**. And also few other important features such as minimalistic UI/UX, customizability, portability, regularly updated templates, etc. But the important thing is that, your personal data is yours alone.
+Welcome to the front page of **Simple Resume**, a free and open-source Resume Builder web app that repects your **Privacy**. And a few other important features such as minimalistic UI, customizability, portability, regularly updated templates, etc. But the important things are, it is absolutely free to use, and your personal data never gets out of your browser.
 
 We're going to use this coveted space to discuss about the features of the application, new changes that were introduced since the release and also other information like how to keep the project running through donations and open-source code contribution.
 
