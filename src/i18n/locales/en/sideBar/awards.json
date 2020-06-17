@@ -1,8 +1,11 @@
 {
     "title": {
-        "label": "Title"
+        "label": "Award Name"
     },
-    "subtitle": {
-        "label": "Subtitle"
+    "awarder": {
+        "label": "Issuer"
+    },
+    "date": {
+        "label": "Date"
     }
 }

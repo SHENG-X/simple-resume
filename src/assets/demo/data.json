@@ -74,23 +74,26 @@
         "awards": [
             {
                 "id": "121f0976-18cb-4e46-921d-0e156b6bf7fb",
-                "title": "Cast Member of a Musical - Oklahoma",
-                "subtitle": "Winter, 2007",
-                "description": "",
+                "title": "Undergraduate Entrance Scholarships",
+                "awarder": "UBC",
+                "date": "Jan, 2010",
+                "summary": "",
                 "enable": true
             },
             {
                 "id": "e5f27346-72ad-4d4f-bab3-726a111e4932",
-                "title": "Class Representative to ASB",
-                "subtitle": "Fall, 2008",
-                "description": "",
+                "title": "Internet Award",
+                "awarder": "IEEE",
+                "date": "Sep, 2008",
+                "summary": "",
                 "enable": true
             },
             {
                 "id": "f71ba9bc-8c14-46b5-99dd-e1333e9aceb9",
-                "title": "Most Improved - Varsity Soccer",
-                "subtitle": "Fall, 2007",
-                "description": "",
+                "title": "American Computer Science League",
+                "awarder": "ACSL",
+                "date": "May, 2007",
+                "summary": "",
                 "enable": true
             }
         ],
@@ -98,22 +101,25 @@
             {
                 "id": "e5170d99-b21d-4131-a7dc-26a4670037f5",
                 "title": "CCNP",
-                "subtitle": "Cisco Systems",
-                "description": "",
+                "issuer": "Cisco Systems",
+                "date": "Jan, 2019",
+                "summary": "",
                 "enable": true
             },
             {
                 "id": "788e4042-9ecb-40c5-849d-7688b4e23888",
                 "title": "VCP6-DCV",
-                "subtitle": "VMWare",
-                "description": "",
+                "issuer": "VMWare",
+                "date": "May, 2018",
+                "summary": "",
                 "enable": true
             },
             {
                 "id": "97a1a8d9-3c03-47fb-93ab-e84f864ffe17",
                 "title": "DCUCI 642-999",
-                "subtitle": "Cisco Systems",
-                "description": "",
+                "issuer": "Cisco Systems",
+                "date": "May, 2017",
+                "summary": "",
                 "enable": true
             }
         ],

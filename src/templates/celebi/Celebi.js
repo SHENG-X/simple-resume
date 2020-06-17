@@ -72,19 +72,23 @@ const Celebi = () => {
     const Contact = () => (
         <div className="mb-6">
             <Heading title="Contact" className="mt-8 w-3/4 mx-auto" />
-            <div className="mb-3">
-                <h6 className="text-xs font-bold">Address</h6>
-                <p className="text-sm">{data.basics.location.address}</p>
-                <p className="text-sm">
-                    {data.basics.location.city}
-                    {
-                        data.basics.location.region ? 
-                        `, ${data.basics.location.region}`
-                        :
-                        ''
-                    }
-                </p>
-            </div>
+            {
+                (data.basics.location.address || data.basics.location.city
+                || data.basics.location.region) &&
+                <div className="mb-3">
+                    <h6 className="text-xs font-bold">Address</h6>
+                    <p className="text-sm">{data.basics.location.address}</p>
+                    <p className="text-sm">
+                        {data.basics.location.city}
+                        {
+                            data.basics.location.region ? 
+                            `, ${data.basics.location.region}`
+                            :
+                            ''
+                        }
+                    </p>
+                </div>
+            }
             <ContactItem 
                 title="Phone" 
                 link={`tel:${data.basics.phone}`}
@@ -137,10 +141,7 @@ const Celebi = () => {
     const EducationItem = x => (
         <div key={x.id} className="my-3 mr-10">
             <h6 className="font-semibold">{x.institution}{x.location ? ', ' : ''}{x.location}</h6>
-            <p className="text-xs">{x.major}</p>
-            <div className="text-xs">
-                {x.startDate} - {x.endDate}
-            </div>
+            <p className="text-xs">{x.major} | {x.startDate} - {x.endDate}</p>
             <ReactMarkdown className="mt-2 text-sm" source={x.description} />
         </div>
     );
@@ -191,9 +192,11 @@ const Celebi = () => {
 
     const AwardItem = x => (
         <div key={x.id} className="my-2">
-            <h6 className="font-semibold">{x.title}</h6>
-            <p className="text-xs">{x.subtitle}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <div className="flex justify-between">
+                <h6 className="font-semibold">{x.title}</h6>
+            </div>
+            <p className="text-xs">{x.awarder}{x.date ? ` | ${x.date}`: ''}</p>
+            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
         </div>
     );
 
@@ -207,10 +210,13 @@ const Celebi = () => {
         );
 
     const CertificationItem = x => (
-        <div key={x.id} className="my-2">
-            <h6 className="font-semibold">{x.title}</h6>
-            <p className="text-xs">{x.subtitle}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />     
+        <div key={x.id} className="my-2 px-6">
+            <div className="flex justify-between">
+                <h6 className="font-semibold">{x.title}</h6>
+                <p className="text-xs font-medium">{x.date}</p>
+            </div>
+            <p className="flex text-xs">{x.issuer}</p>
+            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />     
         </div>
     );
 

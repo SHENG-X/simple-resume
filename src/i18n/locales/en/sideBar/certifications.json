@@ -1,8 +1,11 @@
 {
     "title": {
-        "label": "Name"
+        "label": "Certification Name"
     },
-    "subtitle": {
-        "label": "Authority"
+    "date": {
+        "label": "Date"
+    },
+    "issuer": {
+        "label": "Issuer"
     }
 }
