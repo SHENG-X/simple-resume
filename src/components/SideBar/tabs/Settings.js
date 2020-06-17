@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import { languages } from '../../../i18n';
 import Dropdown from '../../../shared/Dropdown';
