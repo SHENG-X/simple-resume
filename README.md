@@ -13,4 +13,4 @@ Welcome to the front page of **Simple Resume**, a free and open-source Resume Bu
 
 ### [Go to App](https://simpleresume.ca/) 
 
-<!-- [Documentation](https://doc.simple-react-resume.web.app/) -->
+### [Documentation](https://docs.simpleresume.ca/)
