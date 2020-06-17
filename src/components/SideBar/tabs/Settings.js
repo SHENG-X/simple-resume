@@ -20,21 +20,6 @@ const SettingsTab = ({ settings, onChange }) => {
                 </option>
                 )}
             />
-
-            <p className="text-gray-800 text-xs">
-                <Trans t={t} i18nKey="settings.language.helpText">
-                If you would like to help translate the app into your own language, please refer the
-                <a
-                    className="text-blue-600 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://docs.rxresu.me/translation/"
-                >
-                    Translation Documentation
-                </a>
-                .
-                </Trans>
-            </p>
         </div>
     );
 };
