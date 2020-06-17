@@ -148,7 +148,7 @@ const saveAsPdf = (pageRef, panZoomRef, quality, type, customFileName) => {
                 if(customFileName){
                     doc.save(`${customFileName}.pdf`);
                 }else{
-                    doc.save(`RxResume_${Date.now()}.pdf`);
+                    doc.save(`simple_resume_${new Date().toLocaleString()}.pdf`);
                 }
                 saveAsPdfTimer = null;
                 resolve();
