@@ -1,13 +1,13 @@
 module.exports = {
-  title: 'Simple React Resume',
+  title: 'Simple Resume',
   description:
     "A free resume builder that's not out to get your data. Secure, customizable, portable, open-source.",
   themeConfig: {
     logo: '/logo.png',
-    repo: 'SHENG-X/simple-react-resume',
+    repo: 'SHENG-X/simple-resume',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Go to App', link: 'https://simple-react-resume.web.app/' },
+      { text: 'Go to App', link: 'https://simpleresume.ca' },
     ],
     sidebar: [
       '/',

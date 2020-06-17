@@ -4,7 +4,7 @@ title: Technology
 
 # Technology
 
-A credit to all the projects and open source packages that have helped during the building of this project. Truly, without these projects, Simple React Resume wouldn't exist.
+A credit to all the projects and open source packages that have helped during the building of this project. Truly, without these projects, Simple Resume wouldn't exist.
 
 ## ReactJS + Hooks 🎉
 
@@ -40,7 +40,7 @@ A library to generate PDFs in JavaScript.
 
 ## Google Fonts
 
-Google Fonts is a great repository of open type fonts that are allowed to be used on the web. Simple React Resume uses Google Fonts to load different font families and allow the user to choose which font he/she would like on their resume.
+Google Fonts is a great repository of open type fonts that are allowed to be used on the web. Simple Resume uses Google Fonts to load different font families and allow the user to choose which font he/she would like on their resume.
 
 [Learn more &rarr; ](https://fonts.google.com/)
 

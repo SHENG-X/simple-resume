@@ -15,7 +15,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/SHENG-X/simple-react-resume/issues/new"
+                    href="https://github.com/SHENG-X/simple-resume/issues/new"
                     className="mt-4 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
@@ -27,7 +27,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="mailto:sheng.x.work@gmail.com?subject=Feature Request/Reporting a Bug in Simple React Resume: "
+                    href="mailto:sheng.x.work@gmail.com?subject=Feature Request/Reporting a Bug in Simple Resume: "
                     className="mt-4 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
@@ -48,7 +48,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/SHENG-X/simple-react-resume"
+                    href="https://github.com/SHENG-X/simple-resume"
                     className="flex justify-center items-center mt-4 bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
@@ -68,7 +68,7 @@ const AboutTab = () => {
                 <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/SHENG-X/simple-react-resume/blob/master/LICENSE"
+                    href="https://github.com/SHENG-X/simple-resume/blob/master/LICENSE"
                     className="flex justify-center items-center mt-4 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex justify-center items-center">
