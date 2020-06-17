@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+    useState,
+} from 'react';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
@@ -32,14 +34,21 @@ const colorOptions = [
 
 const ColorsTab = ({ theme, onChange }) => {
     const { t } = useTranslation('sideBar');
+    const [inputField, setInputField] = useState('');
 
     const copyColorToClipboard = color => {
+        if(inputField === 'primary'){
+            onChange('theme.colors.primary', color);
+        }else{
+            onChange('theme.colors.accent', color);
+        }
         copyToClipboard(color);
         toast(t('colors.clipboardCopyAction', { color }), {
             bodyClassName: 'text-center text-gray-800 py-2',
         });
-        onChange('theme.colors.accent', color);
     };
+
+
 
     return (
         <div>
@@ -47,19 +56,23 @@ const ColorsTab = ({ theme, onChange }) => {
                 {t('colors.colorOptions')}
             </div>
             <div className="mb-6 grid grid-cols-8 col-gap-2 row-gap-3">
-                {colorOptions.map(color => (
-                <div
-                    key={color}
-                    className="cursor-pointer rounded-full border border-gray-200 h-6 w-6 hover:opacity-75"
-                    style={{ backgroundColor: color }}
-                    onClick={() => copyColorToClipboard(color)}
-                />
-                ))}
+                {
+                    colorOptions.map(color => (
+                        <div
+                            key={color}
+                            className="cursor-pointer rounded-full border border-gray-200 h-6 w-6 hover:opacity-75"
+                            style={{ backgroundColor: color }}
+                            onClick={() => copyColorToClipboard(color)}
+                        />
+                    ))
+                }
             </div>
 
             <hr className="my-6" />
 
-            <div className="my-6 grid grid-cols-6 items-end">
+            <div className="my-6 grid grid-cols-6 items-end"
+                onClick={()=>{setInputField('primary')}}
+            >
                 <div
                     className="rounded-full w-8 h-8 mb-2 border-2"
                     style={{ backgroundColor: theme.colors.primary }}
@@ -74,7 +87,9 @@ const ColorsTab = ({ theme, onChange }) => {
                     </div>
             </div>
 
-            <div className="my-6 grid grid-cols-6 items-end">
+            <div className="my-6 grid grid-cols-6 items-end"
+                onClick={()=>{setInputField('accent')}}
+            >
                 <div
                     className="rounded-full w-8 h-8 mb-2 border-2 accentcolor"
                     style={{ backgroundColor: theme.colors.accent }}
@@ -88,6 +103,7 @@ const ColorsTab = ({ theme, onChange }) => {
                         />
                     </div>
             </div>
+            <p className="text-gray-800 text-xs">{t('colors.helpText')}</p>
         </div>
     );
 };
