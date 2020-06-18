@@ -1,0 +1,148 @@
+import React, {
+    useState,
+    useRef,
+} from 'react';
+import {Editor, EditorState, RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
+
+const Controller = ({ name, handler, inUse }) => (
+    <div className="flex justify-center items-center cursor-pointer hover:text-blue-500 noselect"
+        style={{'width': '24px', 'height': '24px', 'fontSize': '18px'}}
+        onClick={handler}
+    >
+        <span className={`material-icons ${inUse ? 'text-blue-500' : ''}`}>
+            {name}
+        </span>
+    </div>
+)
+
+const RichTextArea = ({value, placeholder, className, label, onChange = ()=>{}, readOnly = false}) => {
+    let initialState = null;
+    if(value){
+        // fill initial state with the last saved state
+        initialState = EditorState.createWithContent(convertFromRaw(JSON.parse(value)));
+    }else{
+        // fill initial state with empty state
+        initialState = EditorState.createEmpty();
+    }
+    const [editorState, setEditorState] = useState(initialState);
+    const [focused, setFocused] = useState(false);
+    const editorRef = useRef(null);
+ 
+    const focusEditor = () => {
+        editorRef.current.focus();
+        setFocused(true);
+    }
+
+    const defocusEditor = () => {
+        setFocused(false);
+    }
+
+    const handleChange = (v) => {
+        setEditorState(v);
+        onChange(JSON.stringify(convertToRaw(v.getCurrentContent())));
+    }
+
+    const handleKeyCommand = (command) => {
+        let newState = RichUtils.handleKeyCommand(editorState, command);
+        if(newState) {
+            handleChange(newState);
+          return true;
+        }
+        return false;
+    }
+
+    const setStyle = (style) => {
+        handleChange(RichUtils.toggleInlineStyle(editorState, style));
+    }
+
+    const setBlockType = (type) => {
+        handleChange(RichUtils.toggleBlockType(editorState, type));
+    }
+    
+    const contentState = editorState.getCurrentContent();
+    const currentSelection = editorState.getSelection();
+    const currentStyle = editorState.getCurrentInlineStyle();
+    const hasBold = currentStyle.has('BOLD');
+    const hasItalic = currentStyle.has('ITALIC');
+    const hasUnderline = currentStyle.has('UNDERLINE');
+
+    const currentSelectionKey = currentSelection.getAnchorKey()
+    const hasOL = contentState.getBlockForKey(currentSelectionKey).getType() === 'ordered-list-item';
+    const hasUL = contentState.getBlockForKey(currentSelectionKey).getType() === 'unordered-list-item';
+    
+    if(readOnly && (initialState.getCurrentContent().getPlainText() === '')){
+        // in read only mode if no text is there then render nothing
+        return null;
+    }
+    return(
+        <div className={`h-full flex flex-col ${readOnly ? `noselect text-sm ${className}`: ''}`}>
+            {
+                !readOnly && 
+                <label className="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">
+                    {label}
+                </label>
+            }
+            <div
+                className={`flex flex-col appearance-none flex-grow block leading-7 w-full rounded ${readOnly ? '' :'border py-3 px-4' } ${ focused ? (readOnly ? '' : 'outline-none bg-white border-gray-500'): (readOnly ?  '': 'bg-gray-200 text-gray-800 border-gray-200')}`}
+                style={{'maxHeight': '560px'}}
+            >
+                {
+                    !readOnly && 
+                    <div className="flex"
+                        style={{'marginLeft': '-6px'}}
+                    >
+                        <Controller
+                            name="format_bold"
+                            inUse={focused && hasBold}
+                            handler={() => setStyle('BOLD')}
+                        />
+                        <Controller
+                            name="format_italic"
+                            inUse={focused && hasItalic} 
+                            handler={() => setStyle('ITALIC')}
+                        />
+                        <Controller
+                            name="format_underlined"
+                            inUse={focused && hasUnderline} 
+                            handler={() => setStyle('UNDERLINE')}
+                        />
+                        <div className='flex justify-center items-center'
+                            style={{
+                                'height': '20px',
+                                'width': '1px',
+                                'backgroundColor': 'rgb(207, 214, 230)',
+                                'margin': '0px 10px'
+                            }}
+                        />
+                        <Controller
+                            name="format_list_bulleted"
+                            inUse={focused && hasUL} 
+                            handler={() => setBlockType('unordered-list-item')}
+                        />
+                        <Controller
+                            name="format_list_numbered"
+                            inUse={focused && hasOL}  
+                            handler={() => setBlockType('ordered-list-item')}
+                        />
+                    </div>
+                }
+                <div 
+                    className="flex-grow"
+                    onClick={focusEditor}
+                >
+                    <Editor 
+                        placeholder={placeholder}
+                        ref={editorRef}
+                        editorState={editorState}
+                        onChange={handleChange}
+                        handleKeyCommand={handleKeyCommand}
+                        onBlur={defocusEditor}
+                        readOnly={readOnly}
+                    />
+                </div>
+            </div>
+        </div>
+        
+    );
+}
+export default RichTextArea;

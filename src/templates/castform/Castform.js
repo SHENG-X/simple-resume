@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { formatDisplayURL } from '../../utils';
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 
 const Castform = () => {
     const context = useContext(AppContext);
@@ -102,7 +103,11 @@ const Castform = () => {
     const Summary = () =>
         data.basics.summary && 
         config.summary.enable && 
-        <ReactMarkdown className="m-5 text-sm" source={data.basics.summary} />;
+        <RichTextArea
+            className="m-5"
+            value={data.basics.summary}
+            readOnly
+        />;
 
     const WorkItem = x => (
         <div key={x.id} className="my-3 px-5">

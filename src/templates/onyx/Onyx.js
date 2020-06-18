@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
 import { formatDisplayURL } from '../../utils';
+import RichTextArea from '../../shared/RichTextArea';
 
 const Onyx = () => {
     const context = useContext(AppContext);
@@ -48,6 +49,10 @@ const Onyx = () => {
             <div>
                 <Heading title={config.summary.heading} />
                 <ReactMarkdown className="text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         );
 

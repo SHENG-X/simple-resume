@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const Glalie = () => {
@@ -110,7 +111,11 @@ const Glalie = () => {
         data.basics.summary && config.summary.enable && (
             <div>
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="text-sm text-justify" source={data.basics.summary} />
+                <RichTextArea
+                    className="justify-text" 
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         );
 

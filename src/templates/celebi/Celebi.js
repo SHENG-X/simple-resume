@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const styles = {
@@ -55,7 +56,11 @@ const Celebi = () => {
         config.summary.enable && (
             <div className="mb-6">
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="my-3 mr-10 text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    className="my-3 mr-10"
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         );
 

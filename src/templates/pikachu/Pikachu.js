@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { formatDisplayURL } from '../../utils';
+import RichTextArea from '../../shared/RichTextArea';
 import AppContext from '../../context/AppContext';
 
 const Pikachu = () => {
@@ -22,7 +23,10 @@ const Pikachu = () => {
 
                 <hr className="my-4 opacity-50" />
 
-                <ReactMarkdown className="text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         </div>
     );

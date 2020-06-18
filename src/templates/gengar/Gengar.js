@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const Gengar = () => {
@@ -53,7 +54,10 @@ const Gengar = () => {
         config.summary.enable && (
             <div className="flex flex-col justify-center items-start mb-6">
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
     );
 
