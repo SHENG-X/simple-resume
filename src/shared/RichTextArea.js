@@ -2,7 +2,7 @@ import React, {
     useState,
     useRef,
 } from 'react';
-import {Editor, EditorState, RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
+import {Editor, EditorState, ContentState, RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
 
 const Controller = ({ name, handler, inUse }) => (
     <div className="flex justify-center items-center cursor-pointer hover:text-blue-500 noselect"
@@ -14,15 +14,24 @@ const Controller = ({ name, handler, inUse }) => (
         </span>
     </div>
 )
-
+const isJSON = (str) => {
+    if ( /^\s*$/.test(str) ) return false;
+    str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@');
+    str = str.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
+    str = str.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
+    return (/^[\],:{}\s]*$/).test(str);
+}
 const RichTextArea = ({value, placeholder, className, label, onChange = ()=>{}, readOnly = false}) => {
-    let initialState = null;
+    // fill initial state with empty state to start
+    let initialState = EditorState.createEmpty();;
     if(value){
-        // fill initial state with the last saved state
-        initialState = EditorState.createWithContent(convertFromRaw(JSON.parse(value)));
-    }else{
-        // fill initial state with empty state
-        initialState = EditorState.createEmpty();
+        if(isJSON(value)){
+            // fill initial state with the last saved state
+            initialState = EditorState.createWithContent(convertFromRaw(JSON.parse(value)));
+        }else{
+            // plain text is received then convert it to editor state
+            initialState = EditorState.createWithContent(ContentState.createFromText(value));
+        }
     }
     const [editorState, setEditorState] = useState(initialState);
     const [focused, setFocused] = useState(false);
