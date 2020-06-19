@@ -185,7 +185,11 @@ const Gengar = () => {
                     ({x.startDate} - {x.endDate})
                 </span>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 

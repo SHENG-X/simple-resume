@@ -11,6 +11,7 @@ import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
+import RichTextArea from '../../../shared/RichTextArea';
 
 const WorkTab = ({ data, config, onChange }) => {
     const context = useContext(AppContext);
@@ -97,12 +98,12 @@ const Form = ({ item, onChange, identifier = '' }) => {
                 />
             </div>
 
-            <TextArea
-                rows="5"
+            <RichTextArea
                 className="mb-6"
                 label={t('app:item.description.label')}
                 value={item.description}
                 onChange={v => onChange(`${identifier}description`, v)}
+                narrow
             />
         </div>
     );

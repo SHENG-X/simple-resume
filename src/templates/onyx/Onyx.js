@@ -48,7 +48,6 @@ const Onyx = () => {
         config.summary.enable && (
             <div>
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="text-sm" source={data.basics.summary} />
                 <RichTextArea
                     value={data.basics.summary}
                     readOnly
@@ -67,7 +66,11 @@ const Onyx = () => {
                     ({x.startDate} - {x.endDate})
                 </span>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
