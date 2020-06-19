@@ -139,3 +139,29 @@ input[type='range']::-webkit-slider-thumb {
               user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
 }
+
+.DraftEditor-root{
+    line-height: 1.5;   
+}
+.public-DraftStyleDefault-ol, .public-DraftStyleDefault-ul{
+    margin: 0 !important;
+}
+.public-DraftStyleDefault-unorderedListItem{
+    list-style: none !important;
+    margin: 0 !important;
+}
+.public-DraftStyleDefault-unorderedListItem .public-DraftStyleDefault-block{
+    display: inline;
+}
+.public-DraftEditorPlaceholder-inner{
+    color: #bdc1c9;
+}
+.justify-text .public-DraftStyleDefault-block{
+    text-align: justify !important;
+}
+.description-area-narrow{
+    margin-bottom: 12px;
+}
+.description-area-narrow > div {
+    height: 320px;
+}

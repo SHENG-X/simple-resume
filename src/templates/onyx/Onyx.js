@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
 import { formatDisplayURL } from '../../utils';
+import RichTextArea from '../../shared/RichTextArea';
 
 const Onyx = () => {
     const context = useContext(AppContext);
@@ -47,7 +47,10 @@ const Onyx = () => {
         config.summary.enable && (
             <div>
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         );
 
@@ -62,7 +65,11 @@ const Onyx = () => {
                     ({x.startDate} - {x.endDate})
                 </span>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -89,7 +96,11 @@ const Onyx = () => {
                     </span>
                 </div>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -109,7 +120,11 @@ const Onyx = () => {
                 <p className="text-xs font-medium" style={{'whiteSpace': 'nowrap'}}>{x.date}</p>
             </div>
             <p className="text-xs">{x.awarder}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -129,7 +144,11 @@ const Onyx = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
                                 
@@ -170,7 +189,11 @@ const Onyx = () => {
             <span className="text-xs">{x.position}</span>
             <span className="text-xs">{x.phone}</span>
             <span className="text-xs">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 

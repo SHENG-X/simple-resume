@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const styles = {
@@ -55,7 +55,11 @@ const Celebi = () => {
         config.summary.enable && (
             <div className="mb-6">
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="my-3 mr-10 text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    className="my-3 mr-10"
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         );
 
@@ -125,7 +129,11 @@ const Celebi = () => {
                     {x.position}{x.location ? ', ' : ''}{x.location} | {x.startDate} - {x.endDate}
                 </p>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -142,7 +150,11 @@ const Celebi = () => {
         <div key={x.id} className="my-3 mr-10">
             <h6 className="font-semibold">{x.institution}{x.location ? ', ' : ''}{x.location}</h6>
             <p className="text-xs">{x.major} | {x.startDate} - {x.endDate}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -175,7 +187,11 @@ const Celebi = () => {
             <span className="text-sm">{x.position}</span>
             <span className="text-sm">{x.phone}</span>
             <span className="text-sm">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -196,7 +212,11 @@ const Celebi = () => {
                 <h6 className="font-semibold">{x.title}</h6>
             </div>
             <p className="text-xs">{x.awarder}{x.date ? ` | ${x.date}`: ''}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -216,7 +236,11 @@ const Celebi = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="flex text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />     
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />    
         </div>
     );
 

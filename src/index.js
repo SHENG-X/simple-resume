@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './i18n';
 import './assets/tailwind/tailwind.css';
 import './index.css';
+import "draft-js/dist/Draft.css";
 
 import * as serviceWorker from './serviceWorker';
 import { AppProvider } from './context/AppContext';

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import { formatDisplayURL } from '../../utils';
+import RichTextArea from '../../shared/RichTextArea';
 import AppContext from '../../context/AppContext';
 
 const Pikachu = () => {
@@ -22,7 +22,10 @@ const Pikachu = () => {
 
                 <hr className="my-4 opacity-50" />
 
-                <ReactMarkdown className="text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
         </div>
     );
@@ -78,7 +81,11 @@ const Pikachu = () => {
             <span className="text-xs">{x.position}</span>
             <span className="text-xs">{x.phone}</span>
             <span className="text-xs">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -104,7 +111,11 @@ const Pikachu = () => {
                     ({x.startDate} - {x.endDate})
                 </span>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -135,7 +146,11 @@ const Pikachu = () => {
                     </span>
                 </div>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -157,7 +172,11 @@ const Pikachu = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.awarder}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -179,7 +198,11 @@ const Pikachu = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
