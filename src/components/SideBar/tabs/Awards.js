@@ -11,6 +11,7 @@ import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
+import RichTextArea from '../../../shared/RichTextArea';
 
 const AwardsTab = ({ data, config, onChange }) => {
     const context = useContext(AppContext);
@@ -84,11 +85,12 @@ const Form = ({ item, onChange, identifier = '' }) => {
                 onChange={v => onChange(`${identifier}date`, v)}
             />
 
-            <TextArea
+            <RichTextArea
                 className="mb-6"
                 label={t('app:item.summary.label')}
                 value={item.summary}
                 onChange={v => onChange(`${identifier}summary`, v)}
+                narrow
             />
         </div>
     );

@@ -196,7 +196,11 @@ const Castform = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.awarder}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 

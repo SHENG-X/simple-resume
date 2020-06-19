@@ -209,7 +209,11 @@ const Celebi = () => {
                 <h6 className="font-semibold">{x.title}</h6>
             </div>
             <p className="text-xs">{x.awarder}{x.date ? ` | ${x.date}`: ''}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
