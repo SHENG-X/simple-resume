@@ -16,12 +16,12 @@ const Controller = ({ name, handler, inUse }) => (
 )
 const isJSON = (str) => {
     if ( /^\s*$/.test(str) ) return false;
-    str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@');
-    str = str.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
+    str = str.replace(/\\(?:["\\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@');
+    str = str.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\\-]?\d+)?/g, ']');
     str = str.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
     return (/^[\],:{}\s]*$/).test(str);
 }
-const RichTextArea = ({value, placeholder, className, label, narrow = false, onChange = ()=>{}, readOnly = false}) => {
+const RichTextArea = ({value, placeholder, className, style, label, narrow = false, onChange = ()=>{}, readOnly = false}) => {
     // fill initial state with empty state to start
     let initialState = EditorState.createEmpty();;
     if(value){
@@ -84,7 +84,9 @@ const RichTextArea = ({value, placeholder, className, label, narrow = false, onC
         return null;
     }
     return(
-        <div className={`h-full flex flex-col ${readOnly ? `noselect text-sm ${className}`: ''} ${narrow ? 'description-area-narrow' : ''}`}>
+        <div className={`flex flex-col ${readOnly ? `noselect text-sm ${className}`: ''} ${narrow ? 'description-area-narrow' : ''}`}
+            style={style}
+        >
             {
                 !readOnly && 
                 <label className="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">

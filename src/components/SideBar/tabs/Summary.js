@@ -30,6 +30,7 @@ const ObjectiveTab = ({ data, config, onChange }) => {
 
             <RichTextArea
                 label={t('basics.summary.label')}
+                style={{'height': '60vh', 'minHeight': '420px', 'maxHeight': '580px'}}
                 value={data.basics.summary}
                 placeholder="Looking for a challenging role in a reputable organization to utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector."
                 onChange={v => onChange('data.basics.summary', v)}
