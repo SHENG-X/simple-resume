@@ -73,3 +73,9 @@ VuePress is what made this documentation possible, with it's clean design and qu
 Fontello is a tool to quickly pack vector images into webfonts. Consider it like Twitter Bootstrap, but for images. It builds everything necessary to include graphics into your web pages. Also, fontello has a big built-in collection of open source artworks.
 
 [Learn more &rarr; ](https://github.com/fontello/fontello)
+
+## DraftJS
+
+Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences. Draft.js allows you to build any type of rich text input, whether you're only looking to support a few inline text styles or building a complex text editor for composing long-form articles.
+
+[Learn more &rarr; ](https://draftjs.org/)
