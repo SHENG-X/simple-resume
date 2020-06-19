@@ -25,6 +25,10 @@ const Sidebar = () => {
     const { state, dispatch } = context;
     const { data, theme, settings, config } = state;
     const tabs = [
+        {
+            key: 'templates',
+            name: t('templates.title'),
+        },
         { 
             key: 'basics', 
             name: t('basics.title'),
@@ -56,10 +60,6 @@ const Sidebar = () => {
         { 
             key: 'references', 
             name: config.references.heading
-        },
-        {
-            key: 'templates',
-            name: t('templates.title'),
         },
         {
             key: 'colors',

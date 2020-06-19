@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const Gengar = () => {
@@ -53,7 +53,10 @@ const Gengar = () => {
         config.summary.enable && (
             <div className="flex flex-col justify-center items-start mb-6">
                 <Heading title={config.summary.heading} />
-                <ReactMarkdown className="text-sm" source={data.basics.summary} />
+                <RichTextArea
+                    value={data.basics.summary}
+                    readOnly
+                />
             </div>
     );
 
@@ -74,20 +77,20 @@ const Gengar = () => {
 
     const EducationItem = x => (
         <div key={x.id} className="mb-3">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between">
                 <div>
                     <h6 className="font-semibold">
                         {x.institution}{x.location ? ', ' : ''}{x.location}
-                        <small className="ml-2">
-                            {
-                                x.startDate !== '' && x.endDate !== '' && (
-                                    <span className="text-xs font-medium">
-                                        ({x.startDate} - {x.endDate})
-                                    </span>
-                                )
-                            }
-                        </small>
                     </h6>
+                    <small>
+                        {
+                            x.startDate !== '' && x.endDate !== '' && (
+                                <span className="text-xs font-medium">
+                                    ({x.startDate} - {x.endDate})
+                                </span>
+                            )
+                        }
+                    </small>
                     <p className="text-xs">{x.major}</p>
                 </div>
                 <div className="flex flex-col text-right items-end">
@@ -96,7 +99,11 @@ const Gengar = () => {
                     </span>
                 </div>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -116,7 +123,11 @@ const Gengar = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -136,7 +147,11 @@ const Gengar = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.awarder}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -155,8 +170,12 @@ const Gengar = () => {
             <span className="text-xs">{x.position}</span>
             <span className="text-xs">{x.phone}</span>
             <span className="text-xs">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
-        </div>
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />        
+            </div>
     );
 
     const References = () =>
@@ -181,7 +200,11 @@ const Gengar = () => {
                     ({x.startDate} - {x.endDate})
                 </span>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 

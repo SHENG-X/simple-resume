@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import set from 'lodash/set';
 
 import TextField from '../../../shared/TextField';
-import TextArea from '../../../shared/TextArea';
+import RichTextArea from '../../../shared/RichTextArea';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import { addItem } from '../../../utils';
@@ -92,13 +92,14 @@ const Form = ({ item, onChange, identifier = '' }) => {
                 onChange={v => onChange(`${identifier}email`, v)}
             />
 
-            <TextArea
-                rows="5"
+            <RichTextArea
                 className="mb-6"
                 label={t('app:item.description.label')}
                 value={item.description}
                 onChange={v => onChange(`${identifier}description`, v)}
+                narrow
             />
+
         </div>
     );
 };

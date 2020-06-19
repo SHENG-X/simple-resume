@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import { formatDisplayURL } from '../../utils';
 import AppContext from '../../context/AppContext';
+import RichTextArea from '../../shared/RichTextArea';
 
 const Castform = () => {
     const context = useContext(AppContext);
@@ -102,7 +102,11 @@ const Castform = () => {
     const Summary = () =>
         data.basics.summary && 
         config.summary.enable && 
-        <ReactMarkdown className="m-5 text-sm" source={data.basics.summary} />;
+        <RichTextArea
+            className="m-5"
+            value={data.basics.summary}
+            readOnly
+        />;
 
     const WorkItem = x => (
         <div key={x.id} className="my-3 px-5">
@@ -115,7 +119,11 @@ const Castform = () => {
                     ({x.startDate} - {x.endDate})
                 </span>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -134,7 +142,11 @@ const Castform = () => {
             <span className="text-xs">{x.position}</span>
             <span className="text-xs">{x.phone}</span>
             <span className="text-xs">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -143,7 +155,7 @@ const Castform = () => {
         config.references.enable && (
             <div>
                 <Heading light title={config.references.heading} />
-                <div className="grid grid-cols-2 gap-6 px-5">
+                <div className="grid grid-cols-2 gap-6 px-5 pb-5">
                     {data.references.filter(x => x.enable).map(ReferenceItem)}
                 </div>
             </div>
@@ -163,7 +175,11 @@ const Castform = () => {
                     </span>
                 </div>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -183,7 +199,11 @@ const Castform = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.awarder}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -203,7 +223,11 @@ const Castform = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
