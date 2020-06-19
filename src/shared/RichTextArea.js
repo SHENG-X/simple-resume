@@ -21,7 +21,7 @@ const isJSON = (str) => {
     str = str.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
     return (/^[\],:{}\s]*$/).test(str);
 }
-const RichTextArea = ({value, placeholder, className, label, onChange = ()=>{}, readOnly = false}) => {
+const RichTextArea = ({value, placeholder, className, label, narrow = false, onChange = ()=>{}, readOnly = false}) => {
     // fill initial state with empty state to start
     let initialState = EditorState.createEmpty();;
     if(value){
@@ -84,7 +84,7 @@ const RichTextArea = ({value, placeholder, className, label, onChange = ()=>{}, 
         return null;
     }
     return(
-        <div className={`h-full flex flex-col ${readOnly ? `noselect text-sm ${className}`: ''}`}>
+        <div className={`h-full flex flex-col ${readOnly ? `noselect text-sm ${className}`: ''} ${narrow ? 'description-area-narrow' : ''}`}>
             {
                 !readOnly && 
                 <label className="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">
@@ -136,7 +136,7 @@ const RichTextArea = ({value, placeholder, className, label, onChange = ()=>{}, 
                     </div>
                 }
                 <div 
-                    className="flex-grow"
+                    className="flex-grow overflow-auto"
                     onClick={focusEditor}
                 >
                     <Editor 

@@ -156,7 +156,12 @@ input[type='range']::-webkit-slider-thumb {
 .public-DraftEditorPlaceholder-inner{
     color: #bdc1c9;
 }
-
 .justify-text .public-DraftStyleDefault-block{
     text-align: justify !important;
+}
+.description-area-narrow{
+    margin-bottom: 12px;
+}
+.description-area-narrow > div {
+    height: 320px;
 }
