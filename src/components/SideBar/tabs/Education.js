@@ -4,14 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import set from 'lodash/set';
 
 import TextField from '../../../shared/TextField';
-import TextArea from '../../../shared/TextArea';
+import RichTextArea from '../../../shared/RichTextArea';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
-import RichTextArea from '../../../shared/RichTextArea';
 
 const EducationTab = ({ data, config, onChange }) => {
     const context = useContext(AppContext);
@@ -117,7 +116,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
                 onChange={v => onChange(`${identifier}description`, v)}
                 narrow
             />
-            
+
         </div>
     );
 };

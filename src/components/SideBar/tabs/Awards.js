@@ -6,12 +6,11 @@ import set from 'lodash/set';
 import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
-import TextArea from '../../../shared/TextArea';
+import RichTextArea from '../../../shared/RichTextArea';
 import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
-import RichTextArea from '../../../shared/RichTextArea';
 
 const AwardsTab = ({ data, config, onChange }) => {
     const context = useContext(AppContext);
