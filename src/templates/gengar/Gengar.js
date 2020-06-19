@@ -78,20 +78,20 @@ const Gengar = () => {
 
     const EducationItem = x => (
         <div key={x.id} className="mb-3">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between">
                 <div>
                     <h6 className="font-semibold">
                         {x.institution}{x.location ? ', ' : ''}{x.location}
-                        <small className="ml-2">
-                            {
-                                x.startDate !== '' && x.endDate !== '' && (
-                                    <span className="text-xs font-medium">
-                                        ({x.startDate} - {x.endDate})
-                                    </span>
-                                )
-                            }
-                        </small>
                     </h6>
+                    <small>
+                        {
+                            x.startDate !== '' && x.endDate !== '' && (
+                                <span className="text-xs font-medium">
+                                    ({x.startDate} - {x.endDate})
+                                </span>
+                            )
+                        }
+                    </small>
                     <p className="text-xs">{x.major}</p>
                 </div>
                 <div className="flex flex-col text-right items-end">
@@ -100,7 +100,11 @@ const Gengar = () => {
                     </span>
                 </div>
             </div>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 

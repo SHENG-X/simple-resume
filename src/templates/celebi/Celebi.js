@@ -151,7 +151,11 @@ const Celebi = () => {
         <div key={x.id} className="my-3 mr-10">
             <h6 className="font-semibold">{x.institution}{x.location ? ', ' : ''}{x.location}</h6>
             <p className="text-xs">{x.major} | {x.startDate} - {x.endDate}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
