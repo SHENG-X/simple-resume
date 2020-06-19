@@ -8,180 +8,156 @@
             "email": "nancyjack43@gmail.com",
             "linkedin": "https://www.linkedin.com/in/jane-doe",
             "github": "https://github.com/jane-doe",
-            "summary": "To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement.",
+            "summary": "{\"blocks\":[{\"key\":\"fi30c\",\"text\":\"To obtain a job within my chosen field that will challenge me and allow me to use my education, skills and past experiences in a way that is mutually beneficial to both myself and my employer and allow for future growth and advancement.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
             "location": {
                 "address": "3879 Gateway Avenue",
                 "city": "Bakersfield",
                 "region": "California"
             }
         },
-        "work": [
-            {
-                "id": "a208ec03-76e3-4428-ac5b-e17c3de4ac18",
-                "company": "On Point Electronics",
-                "location": "NYC, NY",
-                "position": "Customer Service Representative",
-                "startDate": "Jan 2013",
-                "endDate": "July 2018",
-                "description": "- Organized customer information and account data for business planning and customer service purposes.\n- Created excel spreadsheets to track customer data and perform intense reconciliation process.\n- Received 97% positive customer survey results.\n- Speed on calls was 10% above team average.  \n**Key Achievement:** Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.",
-                "enable": true
-            },
-            {
-                "id": "bd8649f2-42d1-4424-acaf-a02c08c3322c",
-                "company": "Excelsior Communications",
-                "location": "NYC, NY",
-                "position": "Customer Service Representative",
-                "startDate": "Oct 2009",
-                "endDate": "Dec 2012",
-                "description": "- Worked as a full time customer service rep in a high volume call center.\n- Received \"Associate of the Month\" award six times.\n- Chosen as an example for other associates in trainings.  \n**Key Achievement:** Received Customer Appreciation bonus in three of four years.",
-                "enable": true
-            },
-            {
-                "id": "dde47711-a7a6-424f-9751-73483a0ef4ed",
-                "company": "Pizza Hut",
-                "location": "Newark, NJ",
-                "position": "Waitress",
-                "startDate": "Aug 2005",
-                "endDate": "Sep 2009",
-                "description": "- Worked passionately in customer service in a high volume restaurant.\n- Completed the FAST customer service training class.\n- Maintained a high tip average thanks to consistent customer satisfaction.",
-                "enable": true
-            }
-        ],
-        "education": [
-            {
-                "id": "624f32ab-2d78-4052-86ad-1354fd41d754",
-                "institution": "The City College of New York",
-                "location": "NYC, NY",
-                "major": "MS in Computer Science",
-                "startDate": "Sep 2001",
-                "endDate": "Aug 2002",
-                "gpa": "7.2 CGPA",
-                "description": "",
-                "enable": true
-            },
-            {
-                "id": "71a9852f-ed14-4281-bff2-4db9a2275978",
-                "institution": "University of California",
-                "location": "Berkeley, CA",
-                "major": "BS in Computer Science",
-                "startDate": "Sep 1997",
-                "endDate": "Aug 2001",
-                "gpa": "8.4 CGPA",
-                "description": "",
-                "enable": true
-            }
-        ],
-        "awards": [
-            {
-                "id": "121f0976-18cb-4e46-921d-0e156b6bf7fb",
-                "title": "Undergraduate Entrance Scholarships",
-                "awarder": "UBC",
-                "date": "Jan, 2010",
-                "summary": "",
-                "enable": true
-            },
-            {
-                "id": "e5f27346-72ad-4d4f-bab3-726a111e4932",
-                "title": "Internet Award",
-                "awarder": "IEEE",
-                "date": "Sep, 2008",
-                "summary": "",
-                "enable": true
-            },
-            {
-                "id": "f71ba9bc-8c14-46b5-99dd-e1333e9aceb9",
-                "title": "American Computer Science League",
-                "awarder": "ACSL",
-                "date": "May, 2007",
-                "summary": "",
-                "enable": true
-            }
-        ],
-        "certifications": [
-            {
-                "id": "e5170d99-b21d-4131-a7dc-26a4670037f5",
-                "title": "CCNP",
-                "issuer": "Cisco Systems",
-                "date": "Jan, 2019",
-                "summary": "",
-                "enable": true
-            },
-            {
-                "id": "788e4042-9ecb-40c5-849d-7688b4e23888",
-                "title": "VCP6-DCV",
-                "issuer": "VMWare",
-                "date": "May, 2018",
-                "summary": "",
-                "enable": true
-            },
-            {
-                "id": "97a1a8d9-3c03-47fb-93ab-e84f864ffe17",
-                "title": "DCUCI 642-999",
-                "issuer": "Cisco Systems",
-                "date": "May, 2017",
-                "summary": "",
-                "enable": true
-            }
-        ],
-        "skills": [
-            {
-                "id": "2562d78a-3459-4370-8604-c81b00738db1",
-                "skill": "Customer Service Expertise"
-            },
-            {
-                "id": "58c31587-9770-4522-a34c-f5ad92fe33e5",
-                "skill": "High-Volume Call Center"
-            },
-            {
-                "id": "7aa9a4b1-a2bb-4bcd-8711-b66c0d246971",
-                "skill": "Team Leader/Problem Solver"
-            },
-            {
-                "id": "e7fd33e8-5d77-462d-8115-5be57f52832e",
-                "skill": "Call Center Management"
-            },
-            {
-                "id": "7bad2af1-c24d-4e01-b68b-be01cfa784ce",
-                "skill": "Teambuilding & Training"
-            },
-            {
-                "id": "64fe1710-c2d1-4f53-922e-a5d751eee967",
-                "skill": "Continuous Improvement"
-            }
-        ],
-        "references": [
-            {
-                "id": "ba3662e6-29cb-4a03-9766-b3618d1621f3",
-                "name": "Lorraine Beasley",
-                "position": "Head of HR, Carson Logistics",
-                "phone": "+1 661-808-4188",
-                "email": "l.beasley@carsonlogistics.com",
-                "description": "",
-                "enable": true
-            },
-            {
-                "id": "62fd3293-0e93-4242-882b-ae19b7865fef",
-                "name": "Mikhail Nabakov",
-                "position": "Assistant Manager, Bullseye",
-                "phone": "+1 661-808-4188",
-                "email": "mikhail@bullseyemart.nyc",
-                "description": "",
-                "enable": true
-            },
-            {
-                "id": "eaab2e32-8591-497c-8676-d122cf3a4798",
-                "name": "Katherine Rose",
-                "position": "CEO , DownToPlay",
-                "phone": "+1 661-808-4188",
-                "email": "k.rose@downtoplay.xyz",
-                "description": "",
-                "enable": true
-            }
-        ]
+        "work": [{
+            "id": "a208ec03-76e3-4428-ac5b-e17c3de4ac18",
+            "company": "On Point Electronics",
+            "location": "NYC, NY",
+            "position": "Customer Service Representative",
+            "startDate": "Jan 2013",
+            "endDate": "July 2018",
+            "description": "{\"blocks\":[{\"key\":\"17jbj\",\"text\":\"Organized customer information and account data for business planning and customer service purposes.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fn7a\",\"text\":\"Created excel spreadsheets to track customer data and perform intense reconciliation process.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"7uccq\",\"text\":\"Received 97% positive customer survey results.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"chb0\",\"text\":\"Speed on calls was 10% above team average.  \",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"auqpb\",\"text\":\"Key Achievement: Designed and executed an automatized system for following up with customers, increasing customer retention by 22%.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":17,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }, {
+            "id": "bd8649f2-42d1-4424-acaf-a02c08c3322c",
+            "company": "Excelsior Communications",
+            "location": "NYC, NY",
+            "position": "Customer Service Representative",
+            "startDate": "Oct 2009",
+            "endDate": "Dec 2012",
+            "description": "{\"blocks\":[{\"key\":\"ah7ji\",\"text\":\"Worked as a full time customer service rep in a high volume call center.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"ebi9m\",\"text\":\"Received \\\"Associate of the Month\\\" award six times.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"9gc2j\",\"text\":\"Chosen as an example for other associates in trainings.  \",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"8ks1n\",\"text\":\"Key Achievement: Received Customer Appreciation bonus in three of four years.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":16,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }, {
+            "id": "dde47711-a7a6-424f-9751-73483a0ef4ed",
+            "company": "Pizza Hut",
+            "location": "Newark, NJ",
+            "position": "Waitress",
+            "startDate": "Aug 2005",
+            "endDate": "Sep 2009",
+            "description": "{\"blocks\":[{\"key\":\"msk9\",\"text\":\"Worked passionately in customer service in a high volume restaurant.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"65mc6\",\"text\":\"Completed the FAST customer service training class.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"ci82f\",\"text\":\"Maintained a high tip average thanks to consistent customer satisfaction.\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }],
+        "education": [{
+            "id": "624f32ab-2d78-4052-86ad-1354fd41d754",
+            "institution": "The City College of New York",
+            "location": "NYC, NY",
+            "major": "MS in Computer Science",
+            "startDate": "Sep 2001",
+            "endDate": "Aug 2002",
+            "gpa": "7.2 CGPA",
+            "description": "",
+            "enable": true
+        }, {
+            "id": "71a9852f-ed14-4281-bff2-4db9a2275978",
+            "institution": "University of California",
+            "location": "Berkeley, CA",
+            "major": "BS in Computer Science",
+            "startDate": "Sep 1997",
+            "endDate": "Aug 2001",
+            "gpa": "8.4 CGPA",
+            "description": "{\"blocks\":[{\"key\":\"1f39u\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }],
+        "awards": [{
+            "id": "121f0976-18cb-4e46-921d-0e156b6bf7fb",
+            "title": "Undergraduate Entrance Scholarships",
+            "awarder": "UBC",
+            "date": "Jan, 2010",
+            "summary": "{\"blocks\":[{\"key\":\"2dmkv\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }, {
+            "id": "e5f27346-72ad-4d4f-bab3-726a111e4932",
+            "title": "Internet Award",
+            "awarder": "IEEE",
+            "date": "Sep, 2008",
+            "summary": "",
+            "enable": true
+        }, {
+            "id": "f71ba9bc-8c14-46b5-99dd-e1333e9aceb9",
+            "title": "American Computer Science League",
+            "awarder": "ACSL",
+            "date": "May, 2007",
+            "summary": "",
+            "enable": true
+        }],
+        "certifications": [{
+            "id": "e5170d99-b21d-4131-a7dc-26a4670037f5",
+            "title": "CCNP",
+            "issuer": "Cisco Systems",
+            "date": "Jan, 2019",
+            "summary": "{\"blocks\":[{\"key\":\"d5kcj\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }, {
+            "id": "788e4042-9ecb-40c5-849d-7688b4e23888",
+            "title": "VCP6-DCV",
+            "issuer": "VMWare",
+            "date": "May, 2018",
+            "summary": "",
+            "enable": true
+        }, {
+            "id": "97a1a8d9-3c03-47fb-93ab-e84f864ffe17",
+            "title": "DCUCI 642-999",
+            "issuer": "Cisco Systems",
+            "date": "May, 2017",
+            "summary": "",
+            "enable": true
+        }],
+        "skills": [{
+            "id": "2562d78a-3459-4370-8604-c81b00738db1",
+            "skill": "Customer Service Expertise"
+        }, {
+            "id": "58c31587-9770-4522-a34c-f5ad92fe33e5",
+            "skill": "High-Volume Call Center"
+        }, {
+            "id": "7aa9a4b1-a2bb-4bcd-8711-b66c0d246971",
+            "skill": "Team Leader/Problem Solver"
+        }, {
+            "id": "e7fd33e8-5d77-462d-8115-5be57f52832e",
+            "skill": "Call Center Management"
+        }, {
+            "id": "7bad2af1-c24d-4e01-b68b-be01cfa784ce",
+            "skill": "Teambuilding & Training"
+        }, {
+            "id": "64fe1710-c2d1-4f53-922e-a5d751eee967",
+            "skill": "Continuous Improvement"
+        }],
+        "references": [{
+            "id": "ba3662e6-29cb-4a03-9766-b3618d1621f3",
+            "name": "Lorraine Beasley",
+            "position": "Head of HR, Carson Logistics",
+            "phone": "+1 661-808-4188",
+            "email": "l.beasley@carsonlogistics.com",
+            "description": "",
+            "enable": true
+        }, {
+            "id": "62fd3293-0e93-4242-882b-ae19b7865fef",
+            "name": "Mikhail Nabakov",
+            "position": "Assistant Manager, Bullseye",
+            "phone": "+1 661-808-4188",
+            "email": "mikhail@bullseyemart.nyc",
+            "description": "{\"blocks\":[{\"key\":\"cs8es\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+            "enable": true
+        }, {
+            "id": "eaab2e32-8591-497c-8676-d122cf3a4798",
+            "name": "Katherine Rose",
+            "position": "CEO , DownToPlay",
+            "phone": "+1 661-808-4188",
+            "email": "k.rose@downtoplay.xyz",
+            "description": "",
+            "enable": true
+        }]
     },
     "theme": {
         "layout": "castform",
-        "font": { "family": "Montserrat" },
+        "font": {
+            "family": "Montserrat"
+        },
         "colors": {
             "background": "#ffffff",
             "primary": "#212121",
