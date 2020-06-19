@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
 import RichTextArea from '../../shared/RichTextArea';
@@ -188,7 +187,11 @@ const Celebi = () => {
             <span className="text-sm">{x.position}</span>
             <span className="text-sm">{x.phone}</span>
             <span className="text-sm">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -233,7 +236,11 @@ const Celebi = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="flex text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />     
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />    
         </div>
     );
 

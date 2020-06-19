@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import AppContext from '../../context/AppContext';
 import RichTextArea from '../../shared/RichTextArea';
@@ -205,7 +204,11 @@ const Glalie = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
@@ -239,7 +242,11 @@ const Glalie = () => {
             <span className="text-xs">{x.position}</span>
             <span className="text-xs">{x.phone}</span>
             <span className="text-xs">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -248,7 +255,9 @@ const Glalie = () => {
         config.references.enable && (
             <div>
                 <Heading title={config.references.heading} />
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid gap-3"
+                    style={{'gridTemplateColumns': 'repeat(auto-fit, 168px)'}}
+                >
                 {data.references.filter(x => x.enable).map(ReferenceItem)}
                 </div>
             </div>

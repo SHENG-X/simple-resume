@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import { formatDisplayURL } from '../../utils';
 import AppContext from '../../context/AppContext';
@@ -143,7 +142,11 @@ const Castform = () => {
             <span className="text-xs">{x.position}</span>
             <span className="text-xs">{x.phone}</span>
             <span className="text-xs">{x.email}</span>
-            <ReactMarkdown className="mt-2 text-sm" source={x.description} />
+            <RichTextArea
+                className="mt-2"
+                value={x.description}
+                readOnly
+            />
         </div>
     );
 
@@ -152,7 +155,7 @@ const Castform = () => {
         config.references.enable && (
             <div>
                 <Heading light title={config.references.heading} />
-                <div className="grid grid-cols-2 gap-6 px-5">
+                <div className="grid grid-cols-2 gap-6 px-5 pb-5">
                     {data.references.filter(x => x.enable).map(ReferenceItem)}
                 </div>
             </div>
@@ -220,7 +223,11 @@ const Castform = () => {
                 <p className="text-xs font-medium">{x.date}</p>
             </div>
             <p className="text-xs">{x.issuer}</p>
-            <ReactMarkdown className="mt-2 text-sm" source={x.summary} />
+            <RichTextArea
+                className="mt-2"
+                value={x.summary}
+                readOnly
+            />
         </div>
     );
 
