@@ -1,5 +1,6 @@
 @import './assets/css/animate.css';
 @import './assets/css/fonts.css';
+@import '../node_modules/animate.css/animate.min.css';
 
 * {
     -ms-overflow-style: none;
