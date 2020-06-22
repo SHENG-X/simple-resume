@@ -9,13 +9,27 @@ const Togepi = () =>{
     const { state } = context;
     const { data, config, theme } = state;
 
-    const DevideLine = () =>(
-        <div className="grid grid-cols-12" style={{'height':'0.1em'}}>
-                    <div className="col-span-2" style={{background: theme.colors.accent}}/>
-                    <div className="col-span-10" style={{background: theme.colors.primary}}/>
-                </div>
+    const LineDivider = () =>(
+        <div className="grid grid-cols-12">
+            <div className="col-span-2" style={{background: theme.colors.accent, height: '2px'}}/>
+            <div className="col-span-10" style={{background: theme.colors.primary, height: '2px'}}/>
+        </div>
     );
 
+    const Title = ({t1, t2, t3}) => (
+      <div className="grid grid-cols-12 font-semibold">
+        <h6 className="col-span-3">
+          {t1}
+        </h6>
+        <h6 className="col-start-4 col-span-5">
+          {t2}
+        </h6>
+        <h6 className="col-start-9 col-span-4">
+          {t3}
+        </h6>
+      </div>
+    );
+    
     const Profile = () => (
         <div className="flex justify-start">
             <div className="mt-0">
@@ -27,11 +41,11 @@ const Togepi = () =>{
 
     const ContactItem = ({icon, value, link = '#'}) => 
         value && (
-            <div className="text-right">
+            <div className="flex items-center justify-end my-3">
                 <a href={link}>
                     <span className="font-medium break-all mr-2">{value}</span>
                 </a>
-                <span className="float-right material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
+                <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent }}>
                     {
                         icon === 'github' ? <i className='icon-github-circled'/> : 
                         icon === 'linkedin' ? <i className='icon-linkedin' /> : 
@@ -42,19 +56,21 @@ const Togepi = () =>{
     );
 
     const Heading = ({ title }) => (
-        <h6 className="text-lg font-bold uppercase mt-6 mb-0" style={{ color: theme.colors.accent }}>
+        <>
+          <h6 className="text-lg font-bold uppercase mt-6 mb-0" style={{ color: theme.colors.accent }}>
             {title}
-        </h6>
+          </h6>
+          <LineDivider/>
+        </>
     );
 
     const EducationItem = x => (
-        <div key={x.id}>
-            
-            <div className="flex justify-between ">
-                <div><h6>{x.startDate}-{x.endDate}</h6></div>
-                <div><h6>{x.institution}{x.location ? ', ' : ''}{x.location}</h6></div>
-                <div className="mr-15"><h6>{x.major}</h6></div>
-            </div>
+        <div className="mt-3" key={x.id}>
+            <Title
+              t1={`${x.startDate} - ${x.endDate}`}
+              t2={`${x.institution}${x.location ? ', ' : ''}${x.location}`}
+              t3={x.major}
+            />
             <div>
                 <RichTextArea
                     className="mt-2"
@@ -70,18 +86,17 @@ const Togepi = () =>{
         config.education.enable && (
             <div className="mb-6">
                 <Heading title={config.education.heading} />
-                <DevideLine/>
                 {data.education.filter(x => x.enable).map(EducationItem)}
             </div>
         );
 
     const WorkItem = x => (
-        <div key={x.id}>
-            <div className="flex justify-between">
-                <div><h6>{x.startDate} - {x.endDate}</h6></div>
-                <div><h6>{x.company}{x.location ? ', ' : ''}{x.location}</h6></div>
-                <div><h6>{x.position}</h6></div>
-            </div>
+        <div className="mt-3" key={x.id}>
+            <Title
+              t1={`${x.startDate} - ${x.endDate}`}
+              t2={`${x.company}${x.location ? ', ' : ''}${x.location}`}
+              t3={x.position}
+            />
             <RichTextArea
                 className="mt-2"
                 value={x.description}
@@ -95,18 +110,17 @@ const Togepi = () =>{
         config.work.enable && (
             <div>
                 <Heading title={config.work.heading} />
-                <DevideLine/>
                 {data.work.filter(x => x.enable).map(WorkItem)}
             </div>
     );
 
     const CertificationItem = x => (
         <div key={x.id} className="mt-3">
-            <div className="flex justify-between">
-                <h6 className="font-semibold">{x.title}</h6>
-                <p className="text-xs font-medium">{x.date}</p>
-            </div>
-            <p className="text-xs">{x.issuer}</p>
+            <Title
+              t1={x.date}
+              t2={x.issuer}
+              t3={x.title}
+            />
             <RichTextArea
                 className="mt-2"
                 value={x.summary}
@@ -120,19 +134,18 @@ const Togepi = () =>{
         config.certifications.enable && (
             <div>
                 <Heading title={config.certifications.heading} />
-                <DevideLine/>
                 {data.certifications.filter(x => x.enable).map(CertificationItem)}
             </div>
     );
 
     const AwardItem = x => 
     (
-        <div key={x.id} className="mb-2">
-            <div className="flex justify-between">
-                <h6 className="font-semibold">{x.title}</h6>
-                <p className="text-xs font-medium">{x.date}</p>
-            </div>
-            <p className="text-xs">{x.awarder}</p>
+        <div key={x.id} className="mt-3">
+            <Title
+              t1={x.date}
+              t2={x.awarder}
+              t3={x.title}
+            />
             <RichTextArea
                 className="mt-2"
                 value={x.summary}
@@ -146,7 +159,6 @@ const Togepi = () =>{
         config.awards.enable && (
             <div>
                 <Heading title={config.awards.heading} />
-                <DevideLine/>
                 <div className="flex flex-col mb-2">
                     {data.awards.filter(x => x.enable).map(AwardItem)}
                 </div>
@@ -154,16 +166,12 @@ const Togepi = () =>{
     );
 
     const SkillItem = x => (
-        <span
-            key={x.id}
-            className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"
-            style={{
-                backgroundColor: theme.colors.primary,
-                color: theme.colors.background,
-            }}
+        <li
+          key={x.id}
+          className="text-xs py-1 font-medium"
         >
             {x.skill}
-        </span>
+        </li>
     );
 
     const Skill = () => 
@@ -171,8 +179,7 @@ const Togepi = () =>{
         config.skills.enable && (
             <div>
                 <Heading title={config.skills.heading}/>
-                <DevideLine/>
-                <div className="mt-1 flex flex-wrap">{data.skills.map(SkillItem)}</div>
+                <ul className="mt-1 grid grid-cols-2">{data.skills.map(SkillItem)}</ul>
             </div>
     );
     
@@ -181,11 +188,12 @@ const Togepi = () =>{
         config.summary.enable && (
             <div>
                 <Heading title={config.summary.heading} />
-                <DevideLine/>
-                <RichTextArea
-                    value={data.basics.summary}
-                    readOnly
-                />
+                <div className="mt-3">
+                  <RichTextArea
+                      value={data.basics.summary}
+                      readOnly
+                  />
+                </div>
             </div>
     );
 
@@ -198,44 +206,42 @@ const Togepi = () =>{
                 </div>
             </div>
             
-            <div className="px-6 py-5">
+            <div className="px-6 pb-5">
                 <div className="grid grid-cols-12">
-                    <div className="col-span-8">
+                    <div className="col-span-8 flex items-center">
                         <Profile/>
                     </div>
 
-                    <div className="col-span-4 text-xs relative">
-                        <div className="object-none absolute bottom-0 right-0">
-                        <ContactItem 
-                            icon="location_on" 
-                            value={data.basics.location.city + (data.basics.location.region ? `, ${data.basics.location.region}`: '')} 
-                        />
-                        <ContactItem 
-                            icon="phone" 
-                            value={data.basics.phone} 
-                            link={`tel:${data.basics.phone}`} 
-                        />
-                        <ContactItem
-                            icon="language"
-                            value={data.basics.website}
-                            link={`http://${data.basics.website}`}
-                        />
-                        <ContactItem
-                            icon="email"
-                            value={data.basics.email}
-                            link={`mailto:${data.basics.email}`}
-                        />
-                        <ContactItem 
-                            icon="github" 
-                            value={formatDisplayURL(data.basics.github)} 
-                            link={data.basics.github}
-                        />
-                        <ContactItem 
-                            icon="linkedin" 
-                            value={formatDisplayURL(data.basics.linkedin)}
-                            link={data.basics.linkedin}
-                        />
-                        </div>
+                    <div className="col-span-4 text-xs">
+                      <ContactItem 
+                          icon="location_on" 
+                          value={data.basics.location.city + (data.basics.location.region ? `, ${data.basics.location.region}`: '')} 
+                      />
+                      <ContactItem 
+                          icon="phone" 
+                          value={data.basics.phone} 
+                          link={`tel:${data.basics.phone}`} 
+                      />
+                      <ContactItem
+                          icon="language"
+                          value={data.basics.website}
+                          link={`http://${data.basics.website}`}
+                      />
+                      <ContactItem
+                          icon="email"
+                          value={data.basics.email}
+                          link={`mailto:${data.basics.email}`}
+                      />
+                      <ContactItem 
+                          icon="github" 
+                          value={formatDisplayURL(data.basics.github)} 
+                          link={data.basics.github}
+                      />
+                      <ContactItem 
+                          icon="linkedin" 
+                          value={formatDisplayURL(data.basics.linkedin)}
+                          link={data.basics.linkedin}
+                      />
                     </div>
                 </div>
                 <Education/>
@@ -247,8 +253,8 @@ const Togepi = () =>{
             </div>
 
             <div className="grid grid-cols-12 w-full absolute bottom-0">
-                    <div className="col-span-3 h-2" style={{background: theme.colors.primary}}/>
-                    <div className="col-start-4 col-span-9 h-2" style={{backgroundColor: theme.colors.accent}}/>
+              <div className="col-span-3 h-2" style={{background: theme.colors.primary}}/>
+              <div className="col-start-4 col-span-9 h-2" style={{backgroundColor: theme.colors.accent}}/>
             </div>
         </div>
     );
