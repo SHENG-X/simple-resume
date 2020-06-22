@@ -79,3 +79,10 @@ Fontello is a tool to quickly pack vector images into webfonts. Consider it like
 Draft.js is a framework for building rich text editors in React, powered by an immutable model and abstracting over cross-browser differences. Draft.js allows you to build any type of rich text input, whether you're only looking to support a few inline text styles or building a complex text editor for composing long-form articles.
 
 [Learn more &rarr; ](https://draftjs.org/)
+
+## Animate.css 
+
+Animate.css is a library of ready-to-use, cross-browser animations for use in your web projects. Great for emphasis, home pages, sliders, and attention-guiding hints.
+
+[Learn more &rarr; ](https://animate.style/)
+

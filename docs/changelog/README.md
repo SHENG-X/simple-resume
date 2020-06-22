@@ -5,9 +5,14 @@ title: Changelog
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+### June 21, 2020
+
+- Added animation effect while moving up, down, and deleting an item.
+
 ### June 19, 2020
 
-- Replace the old markdown textarea with the new rich textarea so that a user can change text style by click a button
+- Replaced the old markdown textarea with the new rich textarea so that a user can change text style by click a button
 - Fixed minor template styling issues
 
 ### June 15, 2020
