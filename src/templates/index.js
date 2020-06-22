@@ -5,6 +5,7 @@ import Castform, { Image as CastformPreview } from './castform';
 import Glalie, { Image as GlaliePreview } from './glalie';
 import Celebi, { Image as CelebiPreview } from './celebi';
 import Charizard, { Image as CharizardPreivew } from './charizard';
+import Togepi, { Image as TogepiPreivew } from './togepi';
 
 export default [
     {
@@ -48,5 +49,11 @@ export default [
         name: 'Celebi',
         component: Celebi,
         preview: CelebiPreview,
+    },
+    {
+        key: 'togepi',
+        name: 'Togepi',
+        component: Togepi,
+        preview: TogepiPreivew,
     },
 ];
