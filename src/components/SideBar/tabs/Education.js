@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
 import set from 'lodash/set';
@@ -165,9 +165,10 @@ const AddItem = ({ heading, dispatch }) => {
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
     const [isOpen, setOpen] = useState(false);
     const identifier = `data.education[${index}].`;
+    const itemRef = useRef(null);
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5">
+        <div className="my-4 border border-gray-200 rounded p-5 animate__animated" ref={itemRef}>
             <ItemHeading title={item.institution} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
@@ -180,6 +181,8 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
                     item={item}
                     last={last}
                     onChange={onChange}
+                    itemRef={itemRef}
+                    setOpen={setOpen}
                     type="education"
                 />
             </div>
