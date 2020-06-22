@@ -18,14 +18,10 @@ const Togepi = () =>{
 
     const Profile = () => (
         <div className="flex justify-start">
-            <div className="bg-gray-400">
-                <img className="w-40 h-40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" alt="profile"/>
+            <div className="mt-0">
+                <h1 className="text-6xl">{data.basics.name}</h1>
+                <h6 className="text-xl" style={{color: theme.colors.primary}}>{data.basics.label}</h6>
             </div>
-            <div className="ml-5 mt-20">
-                <h1 className="text-4xl">{data.basics.name}</h1>
-                <h6 className="text-md" style={{color: theme.colors.primary}}>{data.basics.label}</h6>
-            </div>
-            
         </div>
     );
 
@@ -52,7 +48,7 @@ const Togepi = () =>{
     );
 
     const EducationItem = x => (
-        <div key={x.id} className="">
+        <div key={x.id}>
             
             <div className="flex justify-between ">
                 <div><h6>{x.startDate}-{x.endDate}</h6></div>
@@ -73,7 +69,7 @@ const Togepi = () =>{
         data.education &&
         config.education.enable && (
             <div className="mb-6">
-                <Heading title="EDUCATION" />
+                <Heading title={config.education.heading} />
                 <DevideLine/>
                 {data.education.filter(x => x.enable).map(EducationItem)}
             </div>
@@ -98,7 +94,7 @@ const Togepi = () =>{
         data.work &&
         config.work.enable && (
             <div>
-                <Heading title="WORK EXPERIENCE" />
+                <Heading title={config.work.heading} />
                 <DevideLine/>
                 {data.work.filter(x => x.enable).map(WorkItem)}
             </div>
@@ -123,7 +119,7 @@ const Togepi = () =>{
         data.certifications &&
         config.certifications.enable && (
             <div>
-                <Heading title="CERTIFICATE" />
+                <Heading title={config.certifications.heading} />
                 <DevideLine/>
                 {data.certifications.filter(x => x.enable).map(CertificationItem)}
             </div>
@@ -174,7 +170,7 @@ const Togepi = () =>{
         data.skills &&
         config.skills.enable && (
             <div>
-                <Heading title="SPECIAL SKILLS"/>
+                <Heading title={config.skills.heading}/>
                 <DevideLine/>
                 <div className="mt-1 flex flex-wrap">{data.skills.map(SkillItem)}</div>
             </div>
@@ -184,7 +180,7 @@ const Togepi = () =>{
         data.basics.summary &&
         config.summary.enable && (
             <div>
-                <Heading title="ABOUT ME" />
+                <Heading title={config.summary.heading} />
                 <DevideLine/>
                 <RichTextArea
                     value={data.basics.summary}
@@ -202,7 +198,7 @@ const Togepi = () =>{
                 </div>
             </div>
             
-            <div style={{'padding':'0 40px'}}>
+            <div className="px-6 py-5">
                 <div className="grid grid-cols-12">
                     <div className="col-span-8">
                         <Profile/>
@@ -240,7 +236,6 @@ const Togepi = () =>{
                             link={data.basics.linkedin}
                         />
                         </div>
-                        
                     </div>
                 </div>
                 <Education/>
