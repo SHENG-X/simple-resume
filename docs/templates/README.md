@@ -34,4 +34,8 @@ title: Templates
     <h2 id="celebi"><a href="#celebi" class="header-anchor">#</a> Celebi</h2>
     <img src="./images/Celebi.png" />
   </div>
+  <div>
+    <h2 id="togepi"><a href="#togepi" class="header-anchor">#</a> Togepi</h2>
+    <img src="./images/Togepi.png" />
+  </div>
 </div>
