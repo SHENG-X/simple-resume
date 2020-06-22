@@ -212,6 +212,43 @@ const formatDisplayURL = (url) => {
     return items.map(i => i.replace('www.', '')).join('/');  
 }
 
+const animateUp = (ref, first, cb) => {
+  if(first){
+    ref.current.classList.add("animate__shakeX");
+    setTimeout(() => {
+      ref.current.classList.remove("animate__shakeX");
+    }, 1000);
+  }else{
+    ref.current.classList.add("animate__slideInUp");
+    setTimeout(() => {
+      ref.current.classList.remove("animate__slideInUp");
+    }, 1000);
+  }
+  cb();
+}
+
+const animateDown = (ref, last, cb) => {
+  if(last){
+    ref.current.classList.add("animate__shakeX");
+    setTimeout(() => {
+      ref.current.classList.remove("animate__shakeX");
+    }, 1000);
+  }else{
+    ref.current.classList.add("animate__slideInDown");
+    setTimeout(() => {
+      ref.current.classList.remove("animate__slideInDown");
+    }, 1000);
+    cb();
+  }
+}
+
+const animateRemove = (ref, cb) => {
+  ref.current.classList.add("animate__slideOutRight");
+  setTimeout(() => {
+    cb();
+  }, 1000)
+}
+
 export {
     move,
     hexToRgb,
@@ -224,5 +261,8 @@ export {
     importJson,
     saveAsPdf,
     saveAsMultiPagePdf,
-    formatDisplayURL
+    formatDisplayURL,
+    animateUp,
+    animateDown,
+    animateRemove
 };
