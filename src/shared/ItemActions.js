@@ -2,9 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Checkbox from './Checkbox';
-import { deleteItem, moveItemUp, moveItemDown } from '../utils';
+import { deleteItem, moveItemUp, moveItemDown, animateDown, animateUp, animateRemove } from '../utils';
 
-const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type }) => {
+const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type, itemRef, setOpen }) => {
     const { t } = useTranslation();
 
     return (
@@ -20,7 +20,11 @@ const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type }
 
                 <button
                     type="button"
-                    onClick={() => deleteItem(dispatch, type, item)}
+                    onClick={() => {
+                        setOpen(false);
+                        animateRemove(itemRef, ()=>{deleteItem(dispatch, type, item);})
+                      }
+                    }
                     className="ml-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
                 >
                     <div className="flex items-center">
@@ -31,33 +35,35 @@ const ItemActions = ({ dispatch, first, identifier, item, last, onChange, type }
             </div>
 
             <div className="flex">
-                {
-                    !first && (
-                        <button
-                            type="button"
-                            onClick={() => moveItemUp(dispatch, type, item)}
-                            className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded mr-2"
-                        >
-                            <div className="flex items-center">
-                                <i className="material-icons font-bold text-base">arrow_upward</i>
-                            </div>
-                        </button>
-                    )
-                }
+                <button
+                    type="button"
+                    onClick={() => animateUp(itemRef, first, ()=>{
+                        moveItemUp(dispatch, type, item);
+                        if(first) return;
+                        setOpen(false);
+                      })
+                    }
+                    className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded mr-2"
+                >
+                    <div className="flex items-center">
+                        <i className="material-icons font-bold text-base">arrow_upward</i>
+                    </div>
+                </button>
 
-                {
-                    !last && (
-                        <button
-                            type="button"
-                            onClick={() => moveItemDown(dispatch, type, item)}
-                            className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
-                        >
-                            <div className="flex items-center">
-                                <i className="material-icons font-bold text-base">arrow_downward</i>
-                            </div>
-                        </button>
-                    )
-                }
+                <button
+                    type="button"
+                    onClick={() => animateDown(itemRef, last, ()=>{
+                        moveItemDown(dispatch, type, item);
+                        if(last) return;
+                        setOpen(false);
+                      })
+                    }
+                    className="bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium py-2 px-4 rounded"
+                >
+                    <div className="flex items-center">
+                        <i className="material-icons font-bold text-base">arrow_downward</i>
+                    </div>
+                </button>
             </div>
         </div>
     );
