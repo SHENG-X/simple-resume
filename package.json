@@ -12,6 +12,7 @@
         "@testing-library/react": "^10.0.3",
         "@testing-library/user-event": "^10.1.0",
         "@vuepress/plugin-google-analytics": "^1.4.1",
+        "animate.css": "^4.1.0",
         "autoprefixer": "^9.7.6",
         "axios": "^0.19.2",
         "draft-js": "^0.11.6",
