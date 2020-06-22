@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
-import { addItem, deleteItem, moveItemUp, moveItemDown } from '../../../utils';
+import { addItem, deleteItem, moveItemUp, moveItemDown, animateDown, animateUp, animateRemove } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
 
 const SkillsTab = ({ data, config, onChange }) => {
@@ -33,7 +33,7 @@ const SkillsTab = ({ data, config, onChange }) => {
 
             {
                 data.skills.map((x, index) => (
-                    <Item item={x} key={x.id} index={index} onChange={onChange} dispatch={dispatch} />
+                    <Item item={x} key={x.id} index={index} size={data.skills.length} onChange={onChange} dispatch={dispatch} />
                 ))
             }
 
@@ -97,18 +97,22 @@ const AddItem = ({ heading, dispatch }) => {
     );
 };
 
-const Item = ({ item, index, onChange, dispatch }) => {
+const Item = ({ item, index, size, onChange, dispatch }) => {
     const identifier = `data.skills[${index}]`;
+    const itemRef = useRef(null);
 
     return (
-        <div className="my-4 grid grid-cols-12">
+        <div className="my-4 grid grid-cols-12 animate__animated" ref={itemRef}>
             <div className="col-span-9">
                 <Form item={item} onChange={v => onChange(identifier, {...item, skill: v})} />
             </div>
 
             <button
                 type="button"
-                onClick={() => moveItemUp(dispatch, 'skills', item)}
+                onClick={() => animateUp(itemRef, (index === 0), ()=>{
+                    moveItemUp(dispatch, 'skills', item)
+                  })
+                }
                 className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
             >
                 <div className="flex justify-end items-center">
@@ -118,7 +122,10 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
             <button
                 type="button"
-                onClick={() => moveItemDown(dispatch, 'skills', item)}
+                onClick={() => animateDown(itemRef, (index === size - 1), ()=>{
+                    moveItemDown(dispatch, 'skills', item)
+                  })
+                }
                 className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
             >
                 <div className="flex justify-end items-center">
@@ -128,7 +135,10 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
             <button
                 type="button"
-                onClick={() => deleteItem(dispatch, 'skills', item)}
+                onClick={() => animateRemove(itemRef, ()=> {
+                    deleteItem(dispatch, 'skills', item)
+                  })
+                }
                 className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
             >
                 <div className="flex justify-end items-center">
