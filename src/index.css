@@ -84,7 +84,6 @@ input[type='range']::-webkit-slider-thumb {
 
     #page {
         width: 21cm;
-        min-height: 29.7cm;
         background-color: white;
     }
 
@@ -108,6 +107,7 @@ input[type='range']::-webkit-slider-thumb {
 @page {
     size: letter;
     margin: 0;
+    padding: 0;
 }
 
 @media print {
@@ -126,8 +126,8 @@ input[type='range']::-webkit-slider-thumb {
     }
 
     #printPage {
-        width: 21cm;
-        height: 29.7cm;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
