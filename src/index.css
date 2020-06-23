@@ -102,7 +102,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 @page {
-    size: Letter;
+    size: letter;
     margin: 0;
 }
 
