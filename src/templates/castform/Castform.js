@@ -246,7 +246,6 @@ const Castform = () => {
                 fontFamily: theme.font.family,
                 backgroundColor: theme.colors.background,
                 color: theme.colors.primary,
-                minHeight: '29.7cm'
             }}
         >
             <div className="grid grid-cols-12"
