@@ -84,7 +84,7 @@ const Togepi = () =>{
     const Education = () =>
         data.education &&
         config.education.enable && (
-            <div className="mb-6">
+            <div className="mb-6 px-6">
                 <Heading title={config.education.heading} />
                 {data.education.filter(x => x.enable).map(EducationItem)}
             </div>
@@ -108,7 +108,7 @@ const Togepi = () =>{
     const Work = () => 
         data.work &&
         config.work.enable && (
-            <div>
+            <div className="px-6">
                 <Heading title={config.work.heading} />
                 {data.work.filter(x => x.enable).map(WorkItem)}
             </div>
@@ -132,7 +132,7 @@ const Togepi = () =>{
     const Certificate = () => 
         data.certifications &&
         config.certifications.enable && (
-            <div>
+            <div className="px-6">
                 <Heading title={config.certifications.heading} />
                 {data.certifications.filter(x => x.enable).map(CertificationItem)}
             </div>
@@ -157,7 +157,7 @@ const Togepi = () =>{
     const Awards = () => 
         data.awards &&
         config.awards.enable && (
-            <div>
+            <div className="px-6">
                 <Heading title={config.awards.heading} />
                 <div className="flex flex-col mb-2">
                     {data.awards.filter(x => x.enable).map(AwardItem)}
@@ -177,7 +177,7 @@ const Togepi = () =>{
     const Skill = () => 
         data.skills &&
         config.skills.enable && (
-            <div>
+            <div className="px-6">
                 <Heading title={config.skills.heading}/>
                 <ul className="mt-1 grid grid-cols-2">{data.skills.map(SkillItem)}</ul>
             </div>
@@ -186,7 +186,7 @@ const Togepi = () =>{
     const Summary = () =>
         data.basics.summary &&
         config.summary.enable && (
-            <div>
+            <div className="px-6">
                 <Heading title={config.summary.heading} />
                 <div className="mt-3">
                   <RichTextArea
@@ -198,16 +198,18 @@ const Togepi = () =>{
     );
 
     return(
-        <div style={{fontFamily: theme.font.family}}>
-            <div className="grid grid-cols-12 mb-5">
-                <div className="col-span-1 mt-8 h-8" style={{background: theme.colors.primary}}/>
-                <div className="col-start-2 col-span-11 mt-8 text-white h-8" style={{backgroundColor: theme.colors.accent}}>
-                    <h1 className="ml-3 mt-1">RESUME</h1>
+        <div
+          className="flex flex-col justify-between w-full"
+          style={{fontFamily: theme.font.family}}>
+            <div className="pb-5">
+                <div className="grid grid-cols-12 mb-5">
+                    <div className="col-span-1 mt-8 h-8" style={{background: theme.colors.primary}}/>
+                    <div className="col-start-2 col-span-11 mt-8 text-white h-8" style={{backgroundColor: theme.colors.accent}}>
+                        <h1 className="ml-3 mt-1">RESUME</h1>
+                    </div>
                 </div>
-            </div>
-            
-            <div className="px-6 pb-5">
-                <div className="grid grid-cols-12">
+
+                <div className="grid grid-cols-12 px-6">
                     <div className="col-span-8 flex items-center">
                         <Profile/>
                     </div>
@@ -252,7 +254,7 @@ const Togepi = () =>{
                 <Summary/>
             </div>
 
-            <div className="grid grid-cols-12 w-full absolute bottom-0">
+            <div className="grid grid-cols-12 w-full">
               <div className="col-span-3 h-2" style={{background: theme.colors.primary}}/>
               <div className="col-start-4 col-span-9 h-2" style={{backgroundColor: theme.colors.accent}}/>
             </div>
