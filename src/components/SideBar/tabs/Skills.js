@@ -30,14 +30,14 @@ const SkillsTab = ({ data, config, onChange }) => {
             </div>
 
             <hr className="my-6" />
+            
+            <AddItem heading={config.skills.heading} dispatch={dispatch} />
 
             {
                 data.skills.map((x, index) => (
                     <Item item={x} key={x.id} index={index} size={data.skills.length} onChange={onChange} dispatch={dispatch} />
                 ))
             }
-
-            <AddItem heading={config.skills.heading} dispatch={dispatch} />
         </>
     );
 };

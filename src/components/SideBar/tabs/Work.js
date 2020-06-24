@@ -32,6 +32,9 @@ const WorkTab = ({ data, config, onChange }) => {
                 </div>
             </div>
             <hr className="my-6" />
+
+            <AddItem heading={config.work.heading} dispatch={dispatch} />
+            
             {
                 data.work.map((x, index) => (
                     <Item
@@ -45,7 +48,6 @@ const WorkTab = ({ data, config, onChange }) => {
                     />
                 ))
             }
-            <AddItem heading={config.work.heading} dispatch={dispatch} />
         </>
     );
 };

@@ -36,6 +36,8 @@ const CertificationsTab = ({ data, config, onChange }) => {
 
             <hr className="my-6" />
 
+            <AddItem heading={config.certifications.heading} dispatch={dispatch} />
+
             {data.certifications.map((x, index) => (
                 <Item
                     item={x}
@@ -47,8 +49,6 @@ const CertificationsTab = ({ data, config, onChange }) => {
                     last={index === data.certifications.length - 1}
                 />
             ))}
-
-            <AddItem heading={config.certifications.heading} dispatch={dispatch} />
         </>
     );
 };
