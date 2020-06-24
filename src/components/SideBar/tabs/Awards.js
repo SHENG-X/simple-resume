@@ -36,6 +36,8 @@ const AwardsTab = ({ data, config, onChange }) => {
 
             <hr className="my-6" />
 
+            <AddItem heading={config.awards.heading} dispatch={dispatch} />
+            
             {
                 data.awards.map((x, index) => (
                     <Item
@@ -49,8 +51,6 @@ const AwardsTab = ({ data, config, onChange }) => {
                 />
                 ))
             }
-
-            <AddItem heading={config.awards.heading} dispatch={dispatch} />
         </>
     );
 };

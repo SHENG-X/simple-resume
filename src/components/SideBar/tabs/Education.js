@@ -37,6 +37,8 @@ const EducationTab = ({ data, config, onChange }) => {
 
             <hr className="my-6" />
 
+            <AddItem heading={config.education.heading} dispatch={dispatch} />
+            
             {data.education.map((x, index) => (
                 <Item
                     item={x}
@@ -48,8 +50,6 @@ const EducationTab = ({ data, config, onChange }) => {
                     last={index === data.education.length - 1}
                 />
             ))}
-
-            <AddItem heading={config.education.heading} dispatch={dispatch} />
         </>
     );
 };

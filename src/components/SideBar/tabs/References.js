@@ -36,6 +36,8 @@ const ReferencesTab = ({ data, config, onChange }) => {
 
             <hr className="my-6" />
 
+            <AddItem heading={config.references.heading} dispatch={dispatch} />
+
             {
                 data.references.map((x, index) => 
                     <Item
@@ -49,8 +51,6 @@ const ReferencesTab = ({ data, config, onChange }) => {
                     />
                 )
             }
-
-            <AddItem heading={config.references.heading} dispatch={dispatch} />
         </>
     );
 };
