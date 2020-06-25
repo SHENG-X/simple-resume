@@ -73,7 +73,7 @@ const AddItem = ({ heading, dispatch }) => {
     };
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5">
+        <div className="my-4 border border-gray-200 rounded p-5 hover:shadow-listItem">
             <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>

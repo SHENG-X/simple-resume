@@ -138,11 +138,11 @@ const AddItem = ({ heading, dispatch }) => {
     };
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5">
+        <div className="my-4 border border-gray-200 rounded p-5 hover:shadow-listItem">
             <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-                <Form item={item} onChange={onChange} />
+                <Form className="hover:shadow-none" item={item} onChange={onChange} />
                 <AddItemButton onSubmit={onSubmit} />
             </div>
         </div>
@@ -155,7 +155,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
     const itemRef = useRef(null);
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5 animate__animated" ref={itemRef}>
+        <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
             <ItemHeading title={item.company} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
