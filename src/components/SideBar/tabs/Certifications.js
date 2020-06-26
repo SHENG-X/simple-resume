@@ -36,6 +36,8 @@ const CertificationsTab = ({ data, config, onChange }) => {
 
             <hr className="my-6" />
 
+            <AddItem heading={config.certifications.heading} dispatch={dispatch} />
+
             {data.certifications.map((x, index) => (
                 <Item
                     item={x}
@@ -47,8 +49,6 @@ const CertificationsTab = ({ data, config, onChange }) => {
                     last={index === data.certifications.length - 1}
                 />
             ))}
-
-            <AddItem heading={config.certifications.heading} dispatch={dispatch} />
         </>
     );
 };
@@ -119,7 +119,7 @@ const AddItem = ({ heading, dispatch }) => {
     };
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5">
+        <div className="my-4 border border-gray-200 rounded p-5 hover:shadow-listItem">
             <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
@@ -137,7 +137,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
     const itemRef = useRef(null);
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5 animate__animated" ref={itemRef}>
+        <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
             <ItemHeading title={item.title} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
