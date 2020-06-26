@@ -5,7 +5,7 @@ const AddItemButton = ({ onSubmit }) => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <div className="flex justify-end">
             <button
                 type="button"
                 onClick={onSubmit}
