@@ -264,7 +264,7 @@ const Onyx = () => {
       <div className={`grid ${config.awards.enable && config.certifications.enable ? 'grid-cols-2 gap-6' : ''}`}>
         <Awards />
         <Certifications />
-    </div>
+      </div>
 
       <div className="grid">
         <Skills />
