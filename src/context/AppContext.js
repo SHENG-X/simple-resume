@@ -85,7 +85,7 @@ const reducer = (state = initialState, { type, payload }) => {
             return set({ ...newState }, `data.${payload.key}`, payload.value);
         case 'add_item':
             items = get({ ...newState }, `data.${payload.key}`, []);
-            items.push(payload.value);
+            items.unshift(payload.value);
             return set({ ...newState }, `data.${payload.key}`, items);
         case 'delete_item':
             items = get({ ...newState }, `data.${payload.key}`, []);
