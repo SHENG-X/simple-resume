@@ -8,52 +8,52 @@ import Charizard, { Image as CharizardPreivew } from './charizard';
 import Togepi, { Image as TogepiPreivew } from './togepi';
 
 export default [
-    {
-        key: 'onyx',
-        name: 'Onyx',
-        component: Onyx,
-        preview: OnyxPreview,
-    },
-    {
-        key: 'charizard',
-        name: 'Charizard',
-        component: Charizard,
-        preview: CharizardPreivew,
-    },
-    {
-        key: 'pikachu',
-        name: 'Pikachu',
-        component: Pikachu,
-        preview: PikachuPreview,
-    },
-    {
-        key: 'gengar',
-        name: 'Gengar',
-        component: Gengar,
-        preview: GengarPreview,
-    },
-    {
-        key: 'castform',
-        name: 'Castform',
-        component: Castform,
-        preview: CastformPreview,
-    },
-    {
-        key: 'glalie',
-        name: 'Glalie',
-        component: Glalie,
-        preview: GlaliePreview,
-    },
-    {
-        key: 'celebi',
-        name: 'Celebi',
-        component: Celebi,
-        preview: CelebiPreview,
-    },
-    {
-        key: 'togepi',
-        name: 'Togepi',
-        component: Togepi,
-        preview: TogepiPreivew,
-    },
+  {
+    key: 'onyx',
+    name: 'Onyx',
+    component: Onyx,
+    preview: OnyxPreview,
+  },
+  {
+    key: 'charizard',
+    name: 'Charizard',
+    component: Charizard,
+    preview: CharizardPreivew,
+  },
+  {
+    key: 'pikachu',
+    name: 'Pikachu',
+    component: Pikachu,
+    preview: PikachuPreview,
+  },
+  {
+    key: 'gengar',
+    name: 'Gengar',
+    component: Gengar,
+    preview: GengarPreview,
+  },
+  {
+    key: 'castform',
+    name: 'Castform',
+    component: Castform,
+    preview: CastformPreview,
+  },
+  {
+    key: 'glalie',
+    name: 'Glalie',
+    component: Glalie,
+    preview: GlaliePreview,
+  },
+  {
+    key: 'celebi',
+    name: 'Celebi',
+    component: Celebi,
+    preview: CelebiPreview,
+  },
+  {
+    key: 'togepi',
+    name: 'Togepi',
+    component: Togepi,
+    preview: TogepiPreivew,
+  },
 ];
