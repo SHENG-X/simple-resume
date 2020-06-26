@@ -6,6 +6,7 @@ import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
 import { addItem, deleteItem, moveItemUp, moveItemDown, animateDown, animateUp, animateRemove } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
+import AddItemButton from '../../../shared/AddItemButton';
 
 const SkillsTab = ({ data, config, onChange }) => {
     const context = useContext(AppContext);
@@ -30,7 +31,7 @@ const SkillsTab = ({ data, config, onChange }) => {
             </div>
 
             <hr className="my-6" />
-            
+
             <AddItem heading={config.skills.heading} dispatch={dispatch} />
 
             {
@@ -77,20 +78,16 @@ const AddItem = ({ heading, dispatch }) => {
             <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
             <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-                <div className="grid grid-cols-4 gap-4">
-                    <div className="col-span-3">
+                <div className="flex flex-col">
+                    <div className="mb-3">
                         <Form item={item} onChange={v => setItem({...item, skill: v})} />
                     </div>
 
-                    <button
-                        type="button"
-                        onClick={add}
-                        className="col-span-1 bg-gray-600 hover:bg-gray-700 text-sm font-medium rounded"
-                    >
-                        <div className="flex justify-center items-center">
-                            <i className="material-icons font-bold text-white text-lg">add</i>
-                        </div>
-                    </button>
+                    <div className="flex justify-end">
+                      <AddItemButton
+                        onSubmit={add}
+                      />
+                    </div>
                 </div>
             </div>
         </div>
