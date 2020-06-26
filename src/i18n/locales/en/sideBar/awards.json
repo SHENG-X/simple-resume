@@ -1,11 +1,11 @@
 {
-    "title": {
-        "label": "Award Name"
-    },
-    "awarder": {
-        "label": "Issuer"
-    },
-    "date": {
-        "label": "Date"
-    }
+  "title": {
+    "label": "Award Name"
+  },
+  "awarder": {
+    "label": "Issuer"
+  },
+  "date": {
+    "label": "Date"
+  }
 }

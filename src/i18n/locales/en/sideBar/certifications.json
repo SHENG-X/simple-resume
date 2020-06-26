@@ -1,11 +1,11 @@
 {
-    "title": {
-        "label": "Certification Name"
-    },
-    "date": {
-        "label": "Date"
-    },
-    "issuer": {
-        "label": "Issuer"
-    }
+  "title": {
+    "label": "Certification Name"
+  },
+  "date": {
+    "label": "Date"
+  },
+  "issuer": {
+    "label": "Issuer"
+  }
 }
