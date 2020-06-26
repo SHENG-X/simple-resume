@@ -6,22 +6,22 @@ import detector from 'i18next-browser-languagedetector';
 import resources from './locales';
 
 const languages = [
-    {
-        code: 'en',
-        name: 'English (US)',
-    },
+  {
+    code: 'en',
+    name: 'English (US)',
+  },
 ];
 
 i18n.use(detector)
-    .use(backend)
-    .use(initReactI18next)
-    .init({
-        resources,
-        lng: 'en',
-        fallbackLng: 'en',
-        ns: ['app', 'sideBar'],
-        defaultNS: 'app',
-    });
+  .use(backend)
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'en',
+    fallbackLng: 'en',
+    ns: ['app', 'sideBar'],
+    defaultNS: 'app',
+  });
 
 export { languages };
 

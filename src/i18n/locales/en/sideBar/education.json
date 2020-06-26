@@ -1,14 +1,14 @@
 {
-    "institution": {
-        "label": "Institution"
-    },
-    "location": {
-        "label": "Location"
-    },
-    "major": {
-        "label": "Major"
-    },
-    "gpa": {
-        "label": "GPA"
-    }
+  "institution": {
+    "label": "Institution"
+  },
+  "location": {
+    "label": "Location"
+  },
+  "major": {
+    "label": "Major"
+  },
+  "gpa": {
+    "label": "GPA"
+  }
 }
