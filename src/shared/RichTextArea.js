@@ -1,6 +1,7 @@
 import React, {
     useState,
     useRef,
+    useEffect,
 } from 'react';
 import {Editor, EditorState, ContentState, RichUtils, convertFromRaw, convertToRaw} from 'draft-js';
 
@@ -36,15 +37,25 @@ const RichTextArea = ({value, placeholder, className, style, label, narrow = fal
     const [editorState, setEditorState] = useState(initialState);
     const [focused, setFocused] = useState(false);
     const editorRef = useRef(null);
- 
+    const editorAreaRef = useRef(null);
+
     const focusEditor = () => {
         editorRef.current.focus();
         setFocused(true);
     }
 
-    const defocusEditor = () => {
+    const defocusEditor = (event) => {
+      if (editorAreaRef.current && !editorAreaRef.current.contains(event.target)) {
         setFocused(false);
+      }
     }
+
+    useEffect(() => {
+      document.addEventListener("mousedown", defocusEditor);
+      return () => {
+        document.removeEventListener("mousedown", defocusEditor);
+      }
+    });
 
     const handleChange = (v) => {
         setEditorState(v);
@@ -52,7 +63,7 @@ const RichTextArea = ({value, placeholder, className, style, label, narrow = fal
     }
 
     const handleKeyCommand = (command) => {
-        let newState = RichUtils.handleKeyCommand(editorState, command);
+        const newState = RichUtils.handleKeyCommand(editorState, command);
         if(newState) {
             handleChange(newState);
           return true;
@@ -96,6 +107,7 @@ const RichTextArea = ({value, placeholder, className, style, label, narrow = fal
             <div
                 className={`flex flex-col appearance-none flex-grow block leading-7 w-full rounded ${readOnly ? '' :'border py-3 px-4' } ${ focused ? (readOnly ? '' : 'outline-none bg-white border-gray-500'): (readOnly ?  '': 'bg-gray-200 text-gray-800 border-gray-200')}`}
                 style={{'maxHeight': '560px'}}
+                ref={editorAreaRef}
             >
                 {
                     !readOnly && 
