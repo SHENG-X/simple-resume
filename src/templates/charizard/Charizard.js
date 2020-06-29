@@ -4,7 +4,7 @@ import AppContext from '../../context/AppContext';
 import RichTextArea from '../../shared/RichTextArea';
 import { formatDisplayURL } from '../../utils';
 
-const Onyx = () => {
+const Charizard = () => {
   const context = useContext(AppContext);
   const { state } = context;
   const { data, config, theme } = state;
@@ -276,4 +276,4 @@ const Onyx = () => {
   );
 };
 
-export default Onyx;
+export default Charizard;
