@@ -238,7 +238,6 @@ const Togepi = () =>{
             <div className="col-span-8 flex items-center">
               <Profile/>
             </div>
-
             <div className="col-span-4 text-xs">
               <ContactItem 
                 icon="location_on" 
@@ -271,8 +270,9 @@ const Togepi = () =>{
               />
             </div>
           </div>
-          <Education/>
+          <Summary/>
           <Work/>
+          <Education/>
           <Certificate/>
           <Awards/>
           <Skill/>
