@@ -189,10 +189,10 @@ const Togepi = () =>{
       <div className="px-6">
         <Heading title={config.summary.heading} />
         <div className="mt-3">
-        <RichTextArea
-          value={data.basics.summary}
-          readOnly
-        />
+          <RichTextArea
+            value={data.basics.summary}
+            readOnly
+          />
         </div>
       </div>
   );
