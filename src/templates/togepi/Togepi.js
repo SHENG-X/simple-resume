@@ -84,7 +84,7 @@ const Togepi = () =>{
   const Education = () =>
     data.education &&
     config.education.enable && (
-      <div className="mb-6 px-6">
+      <div className="px-6">
         <Heading title={config.education.heading} />
         {data.education.filter(x => x.enable).map(EducationItem)}
       </div>
@@ -179,7 +179,7 @@ const Togepi = () =>{
     config.skills.enable && (
       <div className="px-6">
         <Heading title={config.skills.heading}/>
-        <ul className="mt-1 grid grid-cols-2">{data.skills.map(SkillItem)}</ul>
+        <ul className="mt-1 grid grid-cols-3">{data.skills.map(SkillItem)}</ul>
       </div>
   );
 
@@ -189,13 +189,38 @@ const Togepi = () =>{
       <div className="px-6">
         <Heading title={config.summary.heading} />
         <div className="mt-3">
-        <RichTextArea
-          value={data.basics.summary}
-          readOnly
-        />
+          <RichTextArea
+            value={data.basics.summary}
+            readOnly
+          />
         </div>
       </div>
   );
+
+  const ReferenceItem = x => (
+    <div key={x.id} className="flex flex-col">
+      <h6 className="text-sm font-medium">{x.name}</h6>
+      <span className="text-xs">{x.position}</span>
+      <span className="text-xs">{x.phone}</span>
+      <span className="text-xs">{x.email}</span>
+      <RichTextArea
+        className="mt-2"
+        value={x.description}
+        readOnly
+      />
+    </div>
+  );
+
+  const References = () =>
+    data.references &&
+    config.references.enable && (
+      <div className="px-6">
+        <Heading title={config.references.heading} />
+        <div className="grid grid-cols-3 gap-2 mt-3">
+          {data.references.filter(x => x.enable).map(ReferenceItem)}
+        </div>
+      </div>
+    );
 
   return(
     <div
@@ -213,7 +238,6 @@ const Togepi = () =>{
             <div className="col-span-8 flex items-center">
               <Profile/>
             </div>
-
             <div className="col-span-4 text-xs">
               <ContactItem 
                 icon="location_on" 
@@ -246,12 +270,13 @@ const Togepi = () =>{
               />
             </div>
           </div>
-          <Education/>
+          <Summary/>
           <Work/>
+          <Education/>
           <Certificate/>
           <Awards/>
           <Skill/>
-          <Summary/>
+          <References/>
         </div>
 
         <div className="grid grid-cols-12 w-full">

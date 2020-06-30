@@ -1,31 +1,33 @@
 import React, { useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
-import RichTextArea from '../../shared/RichTextArea';
 import { formatDisplayURL } from '../../utils';
+import RichTextArea from '../../shared/RichTextArea';
 
-const Charizard = () => {
+const Eevee = () => {
   const context = useContext(AppContext);
   const { state } = context;
   const { data, config, theme } = state;
 
   const Profile = () => (
-    <div>
+    <>
       <h1 className="font-bold text-6xl" style={{ color: theme.colors.accent }}>
         {data.basics.name}
       </h1>
-      <h6 className="font-medium text-sm">{data.basics.label}</h6>
-    </div>
+      <h6 className="font-medium text-sm mb-2">{data.basics.label}</h6>
+    </>
   );
 
   const ContactItem = ({ icon, value, link = '#' }) =>
     value && (
-      <div className="flex items-center my-2">
+      <div
+        className="flex items-center mx-2 flex-wrap"
+      >
         <span className="material-icons text-lg mr-2" style={{ color: theme.colors.accent, display: 'inherit' }}>
           {
-            icon === 'github' ? <i className='icon-github-circled' />
+            icon === 'github' ? <i className='icon-github-circled ' />
             :
-            icon === 'linkedin' ? <i className='icon-linkedin' />
+            icon === 'linkedin' ? <i className='icon-linkedin ' />
             :
             icon
           }
@@ -37,7 +39,18 @@ const Charizard = () => {
     );
 
   const Heading = ({ title }) => (
-    <h6 className="text-md font-bold uppercase mt-6 mb-2 border-b" style={{ borderColor: theme.colors.accent, color: theme.colors.accent }}>
+    <h6 className="text-md font-bold uppercase mt-6 mb-2"
+      style={{
+        color: theme.colors.accent,
+        backgroundColor: '#eee',
+        height: '32px',
+        display: 'flex',
+        alignItems: 'center',
+        width: 'calc(100% + 12px)',
+        marginLeft: '-12px',
+        padding: '12px',
+      }}
+    >
       {title}
     </h6>
   );
@@ -48,22 +61,30 @@ const Charizard = () => {
       <div>
         <Heading title={config.summary.heading} />
         <RichTextArea
+          className="mt-3"
           value={data.basics.summary}
           readOnly
         />
       </div>
     );
 
+  const SectionItem = ({ date, children }) => 
+    <div className="grid grid-cols-8 mt-3">
+      <div className="col-span-2">
+        { date }
+      </div>
+      <div className="col-start-3 col-span-6">
+        { children }
+      </div>
+    </div>
+
   const WorkItem = x => (
-    <div key={x.id} className="mt-3">
+    <div>
       <div className="flex justify-between">
         <div>
-          <h6 className="font-semibold">{x.position}</h6>
-          <p className="text-xs">{x.company}{x.location ? ', ' : ''}{x.location}</p>
+          <h6 className="font-semibold">{x.company}{x.location ? ', ' : ''}{x.location}</h6>
+          <p className="text-xs">{x.position}</p>
         </div>
-        <span className="text-xs font-medium">
-          ({x.startDate} - {x.endDate})
-        </span>
       </div>
       <RichTextArea
         className="mt-2"
@@ -76,24 +97,31 @@ const Charizard = () => {
   const Work = () =>
     data.work &&
     config.work.enable && (
-      <div>
+      <>
         <Heading title={config.work.heading} />
-        {data.work.filter(x => x.enable).map(WorkItem)}
-      </div>
+        {
+          data.work.filter(x => x.enable).map(item =>
+            <SectionItem
+              date={`${item.startDate} - ${item.endDate}`}
+              key={item.id}
+            >
+              <WorkItem {...item}/>
+            </SectionItem>
+          )
+        }
+      </>
     );
 
   const EducationItem = x => (
-    <div key={x.id} className="mt-3">
+    <div>
       <div className="flex justify-between">
         <div>
-          <h6 className="font-semibold">{x.major}</h6>
-          <p className="text-xs">{x.institution}{x.location ? ', ' : ''}{x.location}</p>
-        </div>
-        <div className="flex flex-col items-end">
-          <span className="text-sm font-bold">{x.gpa}</span>
-          <span className="text-xs font-medium">
-              ({x.startDate} - {x.endDate})
-          </span>
+          <h6 className="font-semibold">{x.institution}{x.location ? ', ' : ''}{x.location}</h6>
+          <div className="text-xs">
+            <span>{x.major}</span>
+            <span> | </span>
+            <span>{x.gpa}</span>
+          </div>
         </div>
       </div>
       <RichTextArea
@@ -109,15 +137,23 @@ const Charizard = () => {
     config.education.enable && (
       <div>
         <Heading title={config.education.heading} />
-        {data.education.filter(x => x.enable).map(EducationItem)}
+        {
+          data.education.filter(x => x.enable).map(item => 
+            <SectionItem
+                date={`${item.startDate} - ${item.endDate}`}
+                key={item.id}
+            >
+              <EducationItem {...item}/>
+            </SectionItem>
+          )
+        }
       </div>
     );
 
   const AwardItem = x => (
-    <div key={x.id} className="mt-3">
+    <div>
       <div className="flex justify-between">
         <h6 className="font-semibold">{x.title}</h6>
-        <p className="text-xs font-medium" style={{'whiteSpace': 'nowrap'}}>{x.date}</p>
       </div>
       <p className="text-xs">{x.awarder}</p>
       <RichTextArea
@@ -133,15 +169,23 @@ const Charizard = () => {
     config.awards.enable && (
       <div>
         <Heading title={config.awards.heading} />
-        {data.awards.filter(x => x.enable).map(AwardItem)}
+        {
+          data.awards.filter(x => x.enable).map(item => 
+            <SectionItem
+              date={item.date}
+              key={item.id}
+            >
+              <AwardItem {...item}/>
+            </SectionItem>
+          )
+        }
       </div>
     );
 
   const CertificationItem = x => (
-    <div key={x.id} className="mt-3">
+    <div>
       <div className="flex justify-between">
         <h6 className="font-semibold">{x.title}</h6>
-        <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.issuer}</p>
       <RichTextArea
@@ -151,20 +195,29 @@ const Charizard = () => {
       />
     </div>
   );
-
+                            
   const Certifications = () =>
     data.certifications &&
     config.certifications.enable && (
       <div>
         <Heading title={config.certifications.heading} />
-        {data.certifications.filter(x => x.enable).map(CertificationItem)}
+        {
+          data.certifications.filter(x => x.enable).map(item => 
+            <SectionItem
+              date={item.date}
+              key={item.id}
+            >
+              <CertificationItem {...item}/>
+            </SectionItem>
+          )
+        }
       </div>
     );
 
   const SkillItem = x => (
     <span
       key={x.id}
-      className="text-xs py-1 rounded-full px-2 font-medium my-2 mr-2"
+      className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"
       style={{
         backgroundColor: '#eeeeee',
         minWidth: '60px',
@@ -205,7 +258,7 @@ const Charizard = () => {
       <div>
         <Heading title={config.references.heading} />
         <div className="grid grid-cols-3 gap-6">
-        {data.references.filter(x => x.enable).map(ReferenceItem)}
+          {data.references.filter(x => x.enable).map(ReferenceItem)}
         </div>
       </div>
     );
@@ -219,12 +272,12 @@ const Charizard = () => {
         color: theme.colors.primary,
       }}
     >
-      <div className="grid grid-cols-4 items-center">
-        <div className="col-span-3 flex items-center">
+      <div className="flex flex-col items-center">
+        {/* <div className="col-span-3 flex items-center"> */}
           <Profile />
-        </div>
+        {/* </div> */}
 
-        <div className="col-span-1 text-xs">
+        <div className="flex flex-wrap justify-center">
           <ContactItem 
             icon="location_on" 
             value={data.basics.location.city + (data.basics.location.region ? `, ${data.basics.location.region}`: '')} 
@@ -235,14 +288,14 @@ const Charizard = () => {
             link={`tel:${data.basics.phone}`} 
           />
           <ContactItem
-            icon="email"
-            value={data.basics.email}
-            link={`mailto:${data.basics.email}`}
-          />
-          <ContactItem
             icon="language"
             value={data.basics.website}
             link={`http://${data.basics.website}`}
+          />
+          <ContactItem
+            icon="email"
+            value={data.basics.email}
+            link={`mailto:${data.basics.email}`}
           />
           <ContactItem 
             icon="github" 
@@ -257,23 +310,23 @@ const Charizard = () => {
         </div>
       </div>
 
+      <hr className="my-6" />
+
       <Summary />
       <Work />
       <Education />
 
-      <div className={`grid ${config.awards.enable && config.certifications.enable ? 'grid-cols-2 gap-6' : ''}`}>
-        <Awards />
-        <Certifications />
-      </div>
+      <Awards />
+      <Certifications />
 
       <div className="grid">
         <Skills />
       </div>
 
       <References />
-
+    
     </div>
   );
 };
 
-export default Charizard;
+export default Eevee;
