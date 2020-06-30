@@ -179,7 +179,7 @@ const Togepi = () =>{
     config.skills.enable && (
       <div className="px-6">
         <Heading title={config.skills.heading}/>
-        <ul className="mt-1 grid grid-cols-2">{data.skills.map(SkillItem)}</ul>
+        <ul className="mt-1 grid grid-cols-3">{data.skills.map(SkillItem)}</ul>
       </div>
   );
 
