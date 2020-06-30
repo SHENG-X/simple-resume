@@ -6,6 +6,11 @@ title: Changelog
 
 All notable changes to this project will be documented in this file.
 
+### June 29, 2020
+
+- Added Eevee template.
+- Only defocus summary/description textarea when clicked outside of the box.
+
 ### June 21, 2020
 
 - Added animation effect while moving up, down, and deleting an item.

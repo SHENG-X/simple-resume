@@ -38,4 +38,8 @@ title: Templates
     <h2 id="togepi"><a href="#togepi" class="header-anchor">#</a> Togepi</h2>
     <img src="./images/Togepi.png" />
   </div>
+  <div>
+    <h2 id="eevee"><a href="#eevee" class="header-anchor">#</a> Eevee</h2>
+    <img src="./images/Eevee.png" />
+  </div>
 </div>
