@@ -6,6 +6,7 @@ import Glalie, { Image as GlaliePreview } from './glalie';
 import Celebi, { Image as CelebiPreview } from './celebi';
 import Charizard, { Image as CharizardPreivew } from './charizard';
 import Togepi, { Image as TogepiPreivew } from './togepi';
+import Eevee, { Image as EeveePreview } from './eevee';
 
 export default [
   {
@@ -55,5 +56,11 @@ export default [
     name: 'Togepi',
     component: Togepi,
     preview: TogepiPreivew,
+  },
+  {
+    key: 'eevee',
+    name: 'Eevee',
+    component: Eevee,
+    preview: EeveePreview,
   },
 ];
