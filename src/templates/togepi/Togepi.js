@@ -84,7 +84,7 @@ const Togepi = () =>{
   const Education = () =>
     data.education &&
     config.education.enable && (
-      <div className="mb-6 px-6">
+      <div className="px-6">
         <Heading title={config.education.heading} />
         {data.education.filter(x => x.enable).map(EducationItem)}
       </div>
