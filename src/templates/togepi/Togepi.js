@@ -197,6 +197,31 @@ const Togepi = () =>{
       </div>
   );
 
+  const ReferenceItem = x => (
+    <div key={x.id} className="flex flex-col">
+      <h6 className="text-sm font-medium">{x.name}</h6>
+      <span className="text-xs">{x.position}</span>
+      <span className="text-xs">{x.phone}</span>
+      <span className="text-xs">{x.email}</span>
+      <RichTextArea
+        className="mt-2"
+        value={x.description}
+        readOnly
+      />
+    </div>
+  );
+
+  const References = () =>
+    data.references &&
+    config.references.enable && (
+      <div className="px-6">
+        <Heading title={config.references.heading} />
+        <div className="grid grid-cols-3 gap-2 mt-3">
+          {data.references.filter(x => x.enable).map(ReferenceItem)}
+        </div>
+      </div>
+    );
+
   return(
     <div
       className="flex flex-col justify-between w-full"
@@ -251,7 +276,7 @@ const Togepi = () =>{
           <Certificate/>
           <Awards/>
           <Skill/>
-          <Summary/>
+          <References/>
         </div>
 
         <div className="grid grid-cols-12 w-full">
