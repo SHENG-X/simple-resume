@@ -89,7 +89,6 @@ const Form = ({ item, onChange, identifier = '' }) => {
         label={t('app:item.summary.label')}
         value={item.summary}
         onChange={v => onChange(`${identifier}summary`, v)}
-        narrow
       />
 
     </div>

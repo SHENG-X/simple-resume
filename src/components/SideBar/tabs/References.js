@@ -97,7 +97,6 @@ const Form = ({ item, onChange, identifier = '' }) => {
         label={t('app:item.description.label')}
         value={item.description}
         onChange={v => onChange(`${identifier}description`, v)}
-        narrow
       />
 
     </div>
