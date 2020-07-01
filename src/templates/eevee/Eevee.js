@@ -273,9 +273,7 @@ const Eevee = () => {
       }}
     >
       <div className="flex flex-col items-center">
-        {/* <div className="col-span-3 flex items-center"> */}
-          <Profile />
-        {/* </div> */}
+        <Profile />
 
         <div className="flex flex-wrap justify-center">
           <ContactItem 
