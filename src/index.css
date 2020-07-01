@@ -251,6 +251,9 @@ input[type='range']::-webkit-slider-thumb {
   display: flex;
   align-items: center;
 }
+.Draftail-ToolbarGroup button {
+  padding: 0.5rem 0.25rem;
+}
 .Draftail-ToolbarGroup .material-icons {
   font-size: 20px;
 }
