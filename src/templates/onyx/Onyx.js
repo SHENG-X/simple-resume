@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
 import { formatDisplayURL } from '../../utils';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 
 const Onyx = () => {
   const context = useContext(AppContext);
@@ -47,7 +47,7 @@ const Onyx = () => {
     config.summary.enable && (
       <div>
         <Heading title={config.summary.heading} />
-        <RichTextArea
+        <TextArea
           value={data.basics.summary}
           readOnly
         />
@@ -65,7 +65,7 @@ const Onyx = () => {
           ({x.startDate} - {x.endDate})
         </span>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -96,7 +96,7 @@ const Onyx = () => {
           </span>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -120,7 +120,7 @@ const Onyx = () => {
         <p className="text-xs font-medium" style={{'whiteSpace': 'nowrap'}}>{x.date}</p>
       </div>
       <p className="text-xs">{x.awarder}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -144,7 +144,7 @@ const Onyx = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -189,7 +189,7 @@ const Onyx = () => {
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly

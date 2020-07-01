@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const Glalie = () => {
@@ -110,7 +110,7 @@ const Glalie = () => {
     data.basics.summary && config.summary.enable && (
       <div>
         <Heading title={config.summary.heading} />
-        <RichTextArea
+        <TextArea
           className="justify-text" 
           value={data.basics.summary}
           readOnly
@@ -128,7 +128,7 @@ const Glalie = () => {
           </p>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -154,7 +154,7 @@ const Glalie = () => {
           {x.startDate} - {x.endDate}
         </p>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -180,7 +180,7 @@ const Glalie = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.awarder}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -204,7 +204,7 @@ const Glalie = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -242,7 +242,7 @@ const Glalie = () => {
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly

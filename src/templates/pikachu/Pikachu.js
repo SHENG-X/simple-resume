@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { formatDisplayURL } from '../../utils';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 import AppContext from '../../context/AppContext';
 
 const Pikachu = () => {
@@ -22,7 +22,7 @@ const Pikachu = () => {
 
         <hr className="my-4 opacity-50" />
 
-        <RichTextArea
+        <TextArea
           value={data.basics.summary}
           readOnly
         />
@@ -81,7 +81,7 @@ const Pikachu = () => {
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -111,7 +111,7 @@ const Pikachu = () => {
           ({x.startDate} - {x.endDate})
         </span>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -146,7 +146,7 @@ const Pikachu = () => {
           </span>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -172,7 +172,7 @@ const Pikachu = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.awarder}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -198,7 +198,7 @@ const Pikachu = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly

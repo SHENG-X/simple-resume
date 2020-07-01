@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { formatDisplayURL } from '../../utils';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 import AppContext from '../../context/AppContext';
 
 const Togepi = () =>{
@@ -72,7 +72,7 @@ const Togepi = () =>{
         t3={x.major}
       />
       <div>
-        <RichTextArea
+        <TextArea
           className="mt-2"
           value={x.description}
           readOnly
@@ -97,7 +97,7 @@ const Togepi = () =>{
         t2={`${x.company}${x.location ? ', ' : ''}${x.location}`}
         t3={x.position}
       />
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -121,7 +121,7 @@ const Togepi = () =>{
         t2={x.issuer}
         t3={x.title}
       />
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -146,7 +146,7 @@ const Togepi = () =>{
         t2={x.awarder}
         t3={x.title}
       />
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -189,7 +189,7 @@ const Togepi = () =>{
       <div className="px-6">
         <Heading title={config.summary.heading} />
         <div className="mt-3">
-          <RichTextArea
+          <TextArea
             value={data.basics.summary}
             readOnly
           />
@@ -203,7 +203,7 @@ const Togepi = () =>{
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly

@@ -80,6 +80,13 @@ Draft.js is a framework for building rich text editors in React, powered by an i
 
 [Learn more &rarr; ](https://draftjs.org/)
 
+## Draftail
+
+A configurable rich text editor built with Draft.js
+
+[Learn more &rarr; ](https://www.draftail.org/)
+
+
 ## Animate.css 
 
 Animate.css is a library of ready-to-use, cross-browser animations for use in your web projects. Great for emphasis, home pages, sliders, and attention-guiding hints.
