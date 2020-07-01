@@ -88,13 +88,28 @@ const TextArea = ({ value, placeholder, label, className='', readOnly = false, o
             placeholder={placeholder}
             spellCheck
             blockTypes={[
-              { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
-              { type: BLOCK_TYPE.ORDERED_LIST_ITEM },
+              {
+                type: BLOCK_TYPE.UNORDERED_LIST_ITEM,
+                icon: <span className="material-icons">format_list_bulleted</span>
+              },
+              {
+                type: BLOCK_TYPE.ORDERED_LIST_ITEM,
+                icon: <span className="material-icons">format_list_numbered</span>
+              },
             ]}
             inlineStyles={[
-              { type: INLINE_STYLE.BOLD },
-              { type: INLINE_STYLE.ITALIC },
-              { type: INLINE_STYLE.UNDERLINE }
+              {
+                type: INLINE_STYLE.BOLD,
+                icon: <span className="material-icons">format_bold</span>
+              },
+              {
+                type: INLINE_STYLE.ITALIC,
+                icon: <span className="material-icons">format_italic</span>
+              },
+              {
+                type: INLINE_STYLE.UNDERLINE,
+                icon: <span className="material-icons">format_underlined</span>
+              }
             ]}
             maxListNesting={2}
           />
