@@ -58,41 +58,49 @@ const TextArea = ({ value, placeholder, label, className='', readOnly = false, o
   }
 
   return(
-    <div 
-      ref={editorAreaRef}
-      className={`
-        ${(readOnly ? 'textarea-readOnly': '')} 
-        ${(areaFocused ? 'textarea-focused': '')} 
-        ${className}
-      `} 
-      onClick={focusEditor}
-    >
+    <>
       {
-        readOnly ? 
-        <DraftailEditor
-          rawContentState={initialState}
-          maxListNesting={2}
-        />
-        :
-        <DraftailEditor
-          ref={editorRef}
-          rawContentState={initialState}
-          onSave={onChange}
-          placeholder={placeholder}
-          spellCheck
-          blockTypes={[
-            { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
-            { type: BLOCK_TYPE.ORDERED_LIST_ITEM },
-          ]}
-          inlineStyles={[
-            { type: INLINE_STYLE.BOLD },
-            { type: INLINE_STYLE.ITALIC },
-            { type: INLINE_STYLE.UNDERLINE }
-          ]}
-          maxListNesting={2}
-        />
+        !readOnly &&
+        <label className="uppercase tracking-wide text-gray-600 text-xs font-semibold mb-2">
+          {label}
+        </label>
       }
-    </div>
+      <div
+        ref={editorAreaRef}
+        className={`
+          ${(readOnly ? 'textarea-readOnly': '')} 
+          ${(areaFocused ? 'textarea-focused': '')} 
+          ${className}
+        `}
+        onClick={focusEditor}
+      >
+        {
+          readOnly ?
+          <DraftailEditor
+            rawContentState={initialState}
+            maxListNesting={2}
+          />
+          :
+          <DraftailEditor
+            ref={editorRef}
+            rawContentState={initialState}
+            onSave={onChange}
+            placeholder={placeholder}
+            spellCheck
+            blockTypes={[
+              { type: BLOCK_TYPE.UNORDERED_LIST_ITEM },
+              { type: BLOCK_TYPE.ORDERED_LIST_ITEM },
+            ]}
+            inlineStyles={[
+              { type: INLINE_STYLE.BOLD },
+              { type: INLINE_STYLE.ITALIC },
+              { type: INLINE_STYLE.UNDERLINE }
+            ]}
+            maxListNesting={2}
+          />
+        }
+      </div>
+    </>
 )}
 
 export default TextArea;
