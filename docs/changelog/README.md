@@ -6,6 +6,10 @@ title: Changelog
 
 All notable changes to this project will be documented in this file.
 
+### July 1, 2020
+
+- Replaced old textarea with new textarea. The new textarea supports multilevel lists and spellchecker.
+
 ### June 29, 2020
 
 - Added Eevee template.
