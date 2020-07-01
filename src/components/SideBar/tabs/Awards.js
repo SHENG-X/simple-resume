@@ -6,7 +6,7 @@ import set from 'lodash/set';
 import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
-import RichTextArea from '../../../shared/RichTextArea';
+import TextArea from '../../../shared/TextArea';
 import { addItem } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
@@ -84,7 +84,7 @@ const Form = ({ item, onChange, identifier = '' }) => {
         onChange={v => onChange(`${identifier}date`, v)}
       />
 
-      <RichTextArea
+      <TextArea
         className="mb-6"
         label={t('app:item.summary.label')}
         value={item.summary}

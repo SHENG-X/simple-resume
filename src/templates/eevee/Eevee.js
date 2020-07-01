@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
 import { formatDisplayURL } from '../../utils';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 
 const Eevee = () => {
   const context = useContext(AppContext);
@@ -60,7 +60,7 @@ const Eevee = () => {
     config.summary.enable && (
       <div>
         <Heading title={config.summary.heading} />
-        <RichTextArea
+        <TextArea
           className="mt-3"
           value={data.basics.summary}
           readOnly
@@ -86,7 +86,7 @@ const Eevee = () => {
           <p className="text-xs">{x.position}</p>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -124,7 +124,7 @@ const Eevee = () => {
           </div>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -156,7 +156,7 @@ const Eevee = () => {
         <h6 className="font-semibold">{x.title}</h6>
       </div>
       <p className="text-xs">{x.awarder}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -188,7 +188,7 @@ const Eevee = () => {
         <h6 className="font-semibold">{x.title}</h6>
       </div>
       <p className="text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -244,7 +244,7 @@ const Eevee = () => {
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly

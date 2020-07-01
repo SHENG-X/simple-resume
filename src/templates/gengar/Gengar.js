@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const Gengar = () => {
@@ -53,7 +53,7 @@ const Gengar = () => {
     config.summary.enable && (
       <div className="flex flex-col justify-center items-start mb-6">
         <Heading title={config.summary.heading} />
-        <RichTextArea
+        <TextArea
           value={data.basics.summary}
           readOnly
         />
@@ -99,7 +99,7 @@ const Gengar = () => {
           </span>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -123,7 +123,7 @@ const Gengar = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -147,7 +147,7 @@ const Gengar = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.awarder}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -170,7 +170,7 @@ const Gengar = () => {
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -200,7 +200,7 @@ const Gengar = () => {
           ({x.startDate} - {x.endDate})
         </span>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly

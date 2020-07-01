@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { formatDisplayURL } from '../../utils';
 import AppContext from '../../context/AppContext';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 
 const Castform = () => {
   const context = useContext(AppContext);
@@ -102,7 +102,7 @@ const Castform = () => {
   const Summary = () =>
     data.basics.summary && 
     config.summary.enable && 
-    <RichTextArea
+    <TextArea
       className="m-5"
       value={data.basics.summary}
       readOnly
@@ -119,7 +119,7 @@ const Castform = () => {
           ({x.startDate} - {x.endDate})
         </span>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -142,7 +142,7 @@ const Castform = () => {
       <span className="text-xs">{x.position}</span>
       <span className="text-xs">{x.phone}</span>
       <span className="text-xs">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -175,7 +175,7 @@ const Castform = () => {
           </span>
         </div>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -199,7 +199,7 @@ const Castform = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.awarder}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -223,7 +223,7 @@ const Castform = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly

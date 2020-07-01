@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import AppContext from '../../context/AppContext';
-import RichTextArea from '../../shared/RichTextArea';
+import TextArea from '../../shared/TextArea';
 import { hexToRgb, formatDisplayURL } from '../../utils';
 
 const styles = {
@@ -55,7 +55,7 @@ const Celebi = () => {
     config.summary.enable && (
       <div className="mb-6">
         <Heading title={config.summary.heading} />
-        <RichTextArea
+        <TextArea
           className="my-3 mr-10"
           value={data.basics.summary}
           readOnly
@@ -129,7 +129,7 @@ const Celebi = () => {
           {x.position}{x.location ? ', ' : ''}{x.location} | {x.startDate} - {x.endDate}
         </p>
       </div>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -150,7 +150,7 @@ const Celebi = () => {
     <div key={x.id} className="my-3 mr-10">
       <h6 className="font-semibold">{x.institution}{x.location ? ', ' : ''}{x.location}</h6>
       <p className="text-xs">{x.major} | {x.startDate} - {x.endDate}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -187,7 +187,7 @@ const Celebi = () => {
       <span className="text-sm">{x.position}</span>
       <span className="text-sm">{x.phone}</span>
       <span className="text-sm">{x.email}</span>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.description}
         readOnly
@@ -212,7 +212,7 @@ const Celebi = () => {
         <h6 className="font-semibold">{x.title}</h6>
       </div>
       <p className="text-xs">{x.awarder}{x.date ? ` | ${x.date}`: ''}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
@@ -236,7 +236,7 @@ const Celebi = () => {
         <p className="text-xs font-medium">{x.date}</p>
       </div>
       <p className="flex text-xs">{x.issuer}</p>
-      <RichTextArea
+      <TextArea
         className="mt-2"
         value={x.summary}
         readOnly
