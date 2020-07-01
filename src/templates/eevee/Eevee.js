@@ -308,8 +308,6 @@ const Eevee = () => {
         </div>
       </div>
 
-      <hr className="my-6" />
-
       <Summary />
       <Work />
       <Education />
