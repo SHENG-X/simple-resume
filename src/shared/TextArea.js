@@ -51,7 +51,7 @@ const TextArea = ({ value, placeholder, label, className='', readOnly = false, o
 
   if (typeof value === 'object') {
     initialState = value;
-  } else if (typeof value === 'string') {
+  } else if (typeof value === 'string' && value !== '') {
     initialState.blocks[0].text = value;
   } else {
     initialState = null;
@@ -68,7 +68,7 @@ const TextArea = ({ value, placeholder, label, className='', readOnly = false, o
       <div
         ref={editorAreaRef}
         className={`
-          ${(readOnly ? 'textarea-readOnly': '')} 
+          ${(readOnly ? (initialState === null ? 'textarea-none' : 'textarea-readOnly') : '')} 
           ${(areaFocused ? 'textarea-focused': '')} 
           ${className}
         `}

@@ -217,6 +217,9 @@ input[type='range']::-webkit-slider-thumb {
 .textarea-readOnly * {
   pointer-events: none;
 }
+.textarea-none {
+  display: none;
+}
 .textarea-readOnly .Draftail-Toolbar {
   display: none;
 }
