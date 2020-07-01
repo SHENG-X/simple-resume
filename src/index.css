@@ -188,6 +188,9 @@ input[type='range']::-webkit-slider-thumb {
   border: none;
 }
 .DraftEditor-root {
+  height: 280px;
+}
+.textarea-summary .DraftEditor-root {
   height: 60vh;
   max-height: 580px;
 }

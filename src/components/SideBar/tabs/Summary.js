@@ -29,6 +29,7 @@ const ObjectiveTab = ({ data, config, onChange }) => {
       <hr className="my-6" />
 
       <TextArea
+        className="textarea-summary"
         label={t('basics.summary.label')}
         value={data.basics.summary}
         placeholder="Looking for a challenging role in a reputable organization to utilize my technical, database, and management skills for the growth of the organization as well as to enhance my knowledge about new and emerging trends in the IT sector."
