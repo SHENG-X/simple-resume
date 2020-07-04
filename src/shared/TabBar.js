@@ -3,7 +3,7 @@ import React from 'react';
 const TabBar = ({ tabs, currentTab, setCurrentTab }) => {
 
   return (
-    <div className="mx-4 mb-6 py-6 flex-column">
+    <div className="mx-4 py-6 flex-column overflow-auto">
       {
         tabs.map((tab) =>(
           <div key={tab.key} className="mx-1 list-none noselect">
