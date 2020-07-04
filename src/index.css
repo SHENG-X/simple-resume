@@ -213,6 +213,7 @@ input[type='range']::-webkit-slider-thumb {
 .Draftail-Editor .DraftEditor-root{
   color: unset;
   font-family: unset;
+  font-size: unset;
 }
 
 .textarea-readOnly * {
