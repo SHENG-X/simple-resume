@@ -134,16 +134,14 @@ const AddItem = ({ heading, dispatch }) => {
 
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
     const [isOpen, setOpen] = useState(false);
-    const [isHover, setHover] = useState(false);
     const identifier = `data.certifications[${index}].`;
     const itemRef = useRef(null);
 
     return (
-        <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}
-        onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
             <ItemHeading title={item.title} setOpen={setOpen} isOpen={isOpen} />
 
-            <div className={`${isHover && !isOpen ? 'block' : 'hidden' } mt-3`}>
+            <div className={`${isOpen ? 'hidden' : 'block' } mt-3`}>
                 <ItemActions
                     dispatch={dispatch}
                     first={first}
