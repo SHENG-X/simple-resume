@@ -164,45 +164,45 @@ const AddItem = ({ heading, dispatch }) => {
 };
 
 const Item = ({ item, index, onChange, dispatch, first, last }) => {
-    const [isOpen, setOpen] = useState(false);
-    const identifier = `data.education[${index}].`;
-    const itemRef = useRef(null);
+  const [isOpen, setOpen] = useState(false);
+  const identifier = `data.education[${index}].`;
+  const itemRef = useRef(null);
 
-    return (
-        <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
-            <ItemHeading title={item.institution} setOpen={setOpen} isOpen={isOpen} />
+  return (
+    <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
+      <ItemHeading title={item.institution} setOpen={setOpen} isOpen={isOpen} />
 
-            <div className={`${isOpen ? 'hidden' : 'block' } mt-3`}>
-                <ItemActions
-                    dispatch={dispatch}
-                    first={first}
-                    identifier={identifier}
-                    item={item}
-                    last={last}
-                    onChange={onChange}
-                    itemRef={itemRef}
-                    setOpen={setOpen}
-                    type="work"
-                />
-            </div>
+      <div className={`${isOpen ? 'hidden' : 'block' } mt-3`}>
+        <ItemActions
+          dispatch={dispatch}
+          first={first}
+          identifier={identifier}
+          item={item}
+          last={last}
+          onChange={onChange}
+          itemRef={itemRef}
+          setOpen={setOpen}
+          type="work"
+        />
+      </div>
 
-            <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
-                <Form item={item} onChange={onChange} identifier={identifier} />
+      <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
+        <Form item={item} onChange={onChange} identifier={identifier} />
 
-                <ItemActions
-                    dispatch={dispatch}
-                    first={first}
-                    identifier={identifier}
-                    item={item}
-                    last={last}
-                    onChange={onChange}
-                    itemRef={itemRef}
-                    setOpen={setOpen}
-                    type="education"
-                />
-            </div>
-        </div>
-    );
+        <ItemActions
+          dispatch={dispatch}
+          first={first}
+          identifier={identifier}
+          item={item}
+          last={last}
+          onChange={onChange}
+          itemRef={itemRef}
+          setOpen={setOpen}
+          type="education"
+        />
+      </div>
+    </div>
+  );
 };
 
 export default EducationTab;
