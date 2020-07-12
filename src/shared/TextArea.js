@@ -87,6 +87,7 @@ const TextArea = ({ value, placeholder, label, className='', readOnly = false, o
             onSave={onChange}
             placeholder={placeholder}
             spellCheck
+            stateSaveInterval={0}
             blockTypes={[
               {
                 type: BLOCK_TYPE.UNORDERED_LIST_ITEM,
