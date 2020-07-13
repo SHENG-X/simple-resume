@@ -63,4 +63,5 @@ export default [
     component: Eevee,
     preview: EeveePreview,
   },
-];
+  // sort templates by name in alphabetic order
+].sort((t1, t2) => (t1.name > t2.name ? 1 : -1));
