@@ -48,6 +48,8 @@ const ActionsTab = ({ data, theme, config, dispatch }) => {
           ref={fileInputRef}
           type="file"
           className="hidden"
+          // only json file type is allowed
+          accept="application/JSON"
           onChange={(e) => importJson(e, dispatch)}
         />
         <a id="downloadAnchor" className="hidden" />
