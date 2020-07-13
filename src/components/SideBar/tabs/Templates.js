@@ -17,7 +17,7 @@ const TemplatesTab = ({ theme, onChange }) => {
             src={x.preview}
             alt={x.name}
           />
-          <p className="mt-1 text-sm font-medium">{x.name}</p>
+          <p className="mt-1 text-md font-medium">{x.name}</p>
           </div>
         ))
       }
