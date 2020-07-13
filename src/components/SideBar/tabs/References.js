@@ -167,7 +167,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
           onChange={onChange}
           itemRef={itemRef}
           setOpen={setOpen}
-          type="work"
+          type="references"
         />
       </div>
 
