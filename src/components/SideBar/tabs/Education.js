@@ -178,7 +178,7 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
     <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
       <ItemHeading title={item.institution} setOpen={setOpen} isOpen={isOpen} />
 
-      <div className={`${isOpen ? 'hidden' : 'block' } mt-3`}>
+      <div className={`${isOpen ? 'hidden' : 'block' } mt-3 shortcut-actions`}>
         <ItemActions
           dispatch={dispatch}
           first={first}
