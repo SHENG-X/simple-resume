@@ -197,7 +197,7 @@ const Sidebar = () => {
       <TabBar tabs={tabs} currentTab={currentTab} setCurrentTab={handleChangeTab} />
       <div 
         className="px-6 py-6 h-screen overflow-y-scroll"
-        style={{'width': '320px', 'display': `${tabOpen ? 'block': 'none'}`}}
+        style={{'width': '360px', 'display': `${tabOpen ? 'block': 'none'}`}}
       >
         {renderTabs()}
       </div>
