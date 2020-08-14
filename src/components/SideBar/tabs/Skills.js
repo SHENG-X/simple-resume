@@ -7,6 +7,7 @@ import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
 import { addItem, migrateSection } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
+import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 
 const SkillsTab = ({ data, config, onChange }) => {
@@ -110,20 +111,19 @@ const Item = ({ item, index, onChange, dispatch }) => {
       <div className="col-span-9">
         <Form item={item} onChange={v => onChange(identifier, {...item, skill: v})} />
       </div>
-      <div className="col-span-1"/>
 
-      <div className="col-span-1"/>
+      <div className="col-span-3">
+        <ItemActions
+          dispatch={dispatch}
+          identifier={identifier}
+          item={item}
+          setOpen={()=>{}}
+          onChange={onChange}
+          itemRef={itemRef}
+          type="skills"
+        />
+      </div>
 
-      <button
-        type="button"
-        onClick={() => animateRemove(itemRef, ()=> {
-            deleteItem(dispatch, 'skills', item)
-          })
-        }
-        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium flex justify-center items-center"
-      >
-          <i className="material-icons font-bold text-xl">close</i>
-      </button>
     </div>
   );
 };

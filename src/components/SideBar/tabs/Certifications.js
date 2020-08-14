@@ -148,32 +148,23 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
   return (
     <div className="my-4 bg-white border border-gray-200 rounded p-5 animate__animated " ref={itemRef}>
-      <ItemHeading title={item.title} setOpen={setOpen} isOpen={isOpen} />
+      <ItemHeading title={item.title} setOpen={setOpen} isOpen={isOpen}>
+        <div className={`${isOpen ? 'hidden' : 'block' }`}>
+          <ItemActions
+            dispatch={dispatch}
+            identifier={identifier}
+            item={item}
+            onChange={onChange}
+            itemRef={itemRef}
+            setOpen={setOpen}
+            type="certifications"
+          />
+        </div>
+      </ItemHeading>
 
-      <div className={`${isOpen ? 'hidden' : 'block' } mt-3 `}>
-        <ItemActions
-          dispatch={dispatch}
-          identifier={identifier}
-          item={item}
-          onChange={onChange}
-          itemRef={itemRef}
-          setOpen={setOpen}
-          type="certifications"
-        />
-      </div>
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
         <Form item={item} onChange={onChange} identifier={identifier} />
-
-        <ItemActions
-          dispatch={dispatch}
-          identifier={identifier}
-          item={item}
-          onChange={onChange}
-          itemRef={itemRef}
-          setOpen={setOpen}
-          type="certifications"
-        />
       </div>
     </div>
   );
