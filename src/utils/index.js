@@ -94,6 +94,16 @@ const moveItemDown = (dispatch, key, value) => {
   saveData(dispatch);
 };
 
+const migrateSection = (dispatch, key, value) => {
+  dispatch({
+    type: 'migrate_section',
+    payload: {
+      key,
+      value,
+    },
+  });
+};
+
 const importJson = (event, dispatch) => {
   const fr = new FileReader();
   fr.addEventListener('load', () => {
@@ -258,6 +268,7 @@ export {
   deleteItem,
   moveItemUp,
   moveItemDown,
+  migrateSection,
   importJson,
   saveAsPdf,
   saveAsMultiPagePdf,
