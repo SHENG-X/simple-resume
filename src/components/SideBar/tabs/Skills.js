@@ -112,17 +112,17 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
       <div className="col-span-1"/>
 
-        <button
-          type="button"
-          onClick={() => animateRemove(itemRef, ()=> {
-              deleteItem(dispatch, 'skills', item)
-            })
-          }
-          className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium flex justify-center items-center"
-        >
-            <i className="material-icons font-bold text-xl">close</i>
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={() => animateRemove(itemRef, ()=> {
+            deleteItem(dispatch, 'skills', item)
+          })
+        }
+        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium flex justify-center items-center"
+      >
+          <i className="material-icons font-bold text-xl">close</i>
+      </button>
+    </div>
   );
 };
 
