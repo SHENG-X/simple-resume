@@ -3,6 +3,5 @@
   "colorOptions": "Color Options",
   "primaryColor": "Primary Color",
   "accentColor": "Secondary Color",
-  "clipboardCopyAction": "{{color}} has been copied to the clipboard.",
   "helpText": "You can use any color that you like by entering the color's hexadecimal format into the text field."
 }
