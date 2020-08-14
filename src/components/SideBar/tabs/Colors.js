@@ -1,11 +1,9 @@
 import React, {
     useState,
 } from 'react';
-import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
 import TextField from '../../../shared/TextField';
-import { copyToClipboard } from '../../../utils';
 
 const colorOptions = [
   '#f44336',
@@ -36,16 +34,12 @@ const ColorsTab = ({ theme, onChange }) => {
   const { t } = useTranslation('sideBar');
   const [inputField, setInputField] = useState('');
 
-  const copyColorToClipboard = color => {
+  const setColor = color => {
     if(inputField === 'primary'){
       onChange('theme.colors.primary', color);
     }else{
       onChange('theme.colors.accent', color);
     }
-    copyToClipboard(color);
-    toast(t('colors.clipboardCopyAction', { color }), {
-      bodyClassName: 'text-center text-gray-800 py-2',
-    });
   };
 
 
@@ -62,7 +56,7 @@ const ColorsTab = ({ theme, onChange }) => {
               key={color}
               className="cursor-pointer rounded-full border border-gray-200 h-6 w-6 hover:opacity-75"
               style={{ backgroundColor: color }}
-              onClick={() => copyColorToClipboard(color)}
+              onClick={() => setColor(color)}
             />
           ))
         }
