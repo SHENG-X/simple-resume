@@ -89,12 +89,14 @@ input[type='range']::-webkit-slider-thumb {
       display: block;
   }
 
-  #sidebar {
+  #sideBar {
       top: 0;
       left: 0;
       bottom: 0;
   }
-
+  #sideBar > div.overflow-auto {
+    box-shadow: 6px 0 12px -6px rgba(0, 0, 0, 0.2);
+  }
   #page {
       width: 21cm;
       background-color: white;
