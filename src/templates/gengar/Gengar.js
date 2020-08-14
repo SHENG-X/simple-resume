@@ -60,7 +60,7 @@ const Gengar = () => {
       </div>
   );
 
-  const SkillItem = x => (
+  const SkillItem = x => x.enable && (
     <li key={x.id} className="text-sm py-1">
       {x.skill}
     </li>

@@ -214,7 +214,7 @@ const Eevee = () => {
       </div>
     );
 
-  const SkillItem = x => (
+  const SkillItem = x => x.enable && (
     <span
       key={x.id}
       className="text-xs rounded-full px-3 py-1 font-medium my-2 mr-2"

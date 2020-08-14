@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
-import { addItem, deleteItem, animateRemove, migrateSection } from '../../../utils';
+import { addItem, migrateSection } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
 import AddItemButton from '../../../shared/AddItemButton';
 
@@ -64,7 +64,8 @@ const AddItem = ({ heading, dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
-    skill: ''
+    skill: '',
+    enable: true,
   });
 
   const add = () => {
@@ -74,7 +75,8 @@ const AddItem = ({ heading, dispatch }) => {
 
     setItem({
         id: uuidv4(),
-        skill: ''
+        skill: '',
+        enable: true,
     });
   };
 
@@ -104,7 +106,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
   const itemRef = useRef(null);
 
   return (
-    <div className="my-4 grid grid-cols-12 animate__animated" ref={itemRef}>
+    <div className={`my-4 grid grid-cols-12 animate__animated ${item.enable ? '' :'opacity-50 hover:opacity-75'}`} ref={itemRef}>
       <div className="col-span-9">
         <Form item={item} onChange={v => onChange(identifier, {...item, skill: v})} />
       </div>

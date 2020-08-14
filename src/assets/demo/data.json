@@ -226,22 +226,28 @@
     }],
     "skills": [{
       "id": "2562d78a-3459-4370-8604-c81b00738db1",
-      "skill": "Customer Service Expertise"
+      "skill": "Customer Service Expertise",
+      "enable": true
     }, {
       "id": "58c31587-9770-4522-a34c-f5ad92fe33e5",
-      "skill": "High-Volume Call Center"
+      "skill": "High-Volume Call Center",
+      "enable": true
     }, {
       "id": "7aa9a4b1-a2bb-4bcd-8711-b66c0d246971",
-      "skill": "Team Leader/Problem Solver"
+      "skill": "Team Leader/Problem Solver",
+      "enable": true
     }, {
       "id": "e7fd33e8-5d77-462d-8115-5be57f52832e",
-      "skill": "Call Center Management"
+      "skill": "Call Center Management",
+      "enable": true
     }, {
       "id": "7bad2af1-c24d-4e01-b68b-be01cfa784ce",
-      "skill": "Teambuilding & Training"
+      "skill": "Teambuilding & Training",
+      "enable": true
     }, {
       "id": "64fe1710-c2d1-4f53-922e-a5d751eee967",
-      "skill": "Continuous Improvement"
+      "skill": "Continuous Improvement",
+      "enable": true
     }],
     "references": [{
       "id": "ba3662e6-29cb-4a03-9766-b3618d1621f3",

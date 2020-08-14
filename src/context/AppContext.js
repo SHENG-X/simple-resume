@@ -112,7 +112,13 @@ const reducer = (state = initialState, { type, payload }) => {
           payload.data[section] = initialState.data[section];
         }
       }
-
+      // enable skills if enable is not defined
+      payload.data.skills = payload.data.skills.map(item => {
+        if (item.enable === undefined) {
+          item.enable = true;
+        }
+        return item;
+      });
       return {
         ...newState,
         ...payload,
