@@ -1,10 +1,11 @@
 import React, { useState, useContext, useRef } from 'react';
+import { ReactSortable } from "react-sortablejs";
 import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
-import { addItem, deleteItem, moveItemUp, moveItemDown, animateDown, animateUp, animateRemove } from '../../../utils';
+import { addItem, deleteItem, moveItemUp, moveItemDown, animateDown, animateUp, animateRemove, migrateSection } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
 import AddItemButton from '../../../shared/AddItemButton';
 
@@ -33,12 +34,16 @@ const SkillsTab = ({ data, config, onChange }) => {
       <hr className="my-6" />
 
       <AddItem heading={config.skills.heading} dispatch={dispatch} />
-
-      {
-        data.skills.map((x, index) => (
-          <Item item={x} key={x.id} index={index} size={data.skills.length} onChange={onChange} dispatch={dispatch} />
-        ))
-      }
+      <ReactSortable
+        list={data.skills}
+        setList={newState => migrateSection(dispatch, 'skills', newState)}
+      >
+        {
+          data.skills.map((x, index) => (
+            <Item item={x} key={x.id} index={index} size={data.skills.length} onChange={onChange} dispatch={dispatch} />
+          ))
+        }
+      </ReactSortable>
     </>
   );
 };
