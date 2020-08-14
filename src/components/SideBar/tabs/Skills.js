@@ -1,10 +1,11 @@
 import React, { useState, useContext, useRef } from 'react';
+import { ReactSortable } from "react-sortablejs";
 import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
-import { addItem, deleteItem, moveItemUp, moveItemDown, animateDown, animateUp, animateRemove } from '../../../utils';
+import { addItem, deleteItem, animateRemove, migrateSection } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
 import AddItemButton from '../../../shared/AddItemButton';
 
@@ -33,12 +34,16 @@ const SkillsTab = ({ data, config, onChange }) => {
       <hr className="my-6" />
 
       <AddItem heading={config.skills.heading} dispatch={dispatch} />
-
-      {
-        data.skills.map((x, index) => (
-          <Item item={x} key={x.id} index={index} size={data.skills.length} onChange={onChange} dispatch={dispatch} />
-        ))
-      }
+      <ReactSortable
+        list={data.skills}
+        setList={newState => migrateSection(dispatch, 'skills', newState)}
+      >
+        {
+          data.skills.map((x, index) => (
+            <Item item={x} key={x.id} index={index} onChange={onChange} dispatch={dispatch} />
+          ))
+        }
+      </ReactSortable>
     </>
   );
 };
@@ -74,7 +79,7 @@ const AddItem = ({ heading, dispatch }) => {
   };
 
   return (
-    <div className="my-4 border border-gray-200 rounded p-5 hover:shadow-listItem">
+    <div className="my-4 border border-gray-200 rounded p-5 ">
       <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
       <div className={`mt-6 ${isOpen ? 'block' : 'hidden'}`}>
@@ -94,7 +99,7 @@ const AddItem = ({ heading, dispatch }) => {
   );
 };
 
-const Item = ({ item, index, size, onChange, dispatch }) => {
+const Item = ({ item, index, onChange, dispatch }) => {
   const identifier = `data.skills[${index}]`;
   const itemRef = useRef(null);
 
@@ -103,32 +108,9 @@ const Item = ({ item, index, size, onChange, dispatch }) => {
       <div className="col-span-9">
         <Form item={item} onChange={v => onChange(identifier, {...item, skill: v})} />
       </div>
+      <div className="col-span-1"/>
 
-      <button
-        type="button"
-        onClick={() => animateUp(itemRef, (index === 0), ()=>{
-            moveItemUp(dispatch, 'skills', item)
-          })
-        }
-        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
-      >
-        <div className="flex justify-end items-center">
-          <i className="material-icons font-bold text-lg">arrow_upward</i>
-        </div>
-      </button>
-
-      <button
-        type="button"
-        onClick={() => animateDown(itemRef, (index === size - 1), ()=>{
-            moveItemDown(dispatch, 'skills', item)
-          })
-        }
-        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
-      >
-        <div className="flex justify-end items-center">
-          <i className="material-icons font-bold text-lg">arrow_downward</i>
-        </div>
-      </button>
+      <div className="col-span-1"/>
 
       <button
         type="button"
@@ -136,11 +118,9 @@ const Item = ({ item, index, size, onChange, dispatch }) => {
             deleteItem(dispatch, 'skills', item)
           })
         }
-        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium"
+        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium flex justify-center items-center"
       >
-        <div className="flex justify-end items-center">
-          <i className="material-icons font-bold text-lg">close</i>
-        </div>
+          <i className="material-icons font-bold text-xl">close</i>
       </button>
     </div>
   );
