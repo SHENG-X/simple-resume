@@ -261,11 +261,3 @@ input[type='range']::-webkit-slider-thumb {
 .Draftail-ToolbarGroup .material-icons {
   font-size: 20px;
 }
-
-.shortcut-actions {
-  opacity: 0.3;
-}
-
-.shortcut-actions:hover {
-  opacity: 1;
-}
