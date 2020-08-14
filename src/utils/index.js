@@ -102,6 +102,7 @@ const migrateSection = (dispatch, key, value) => {
       value,
     },
   });
+  dispatch({ type: 'save_data' });
 };
 
 const importJson = (event, dispatch) => {
