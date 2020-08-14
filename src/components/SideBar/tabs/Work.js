@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ReactSortable } from "react-sortablejs";
 import { v4 as uuidv4 } from 'uuid';
 import set from 'lodash/set';
 
@@ -7,7 +8,7 @@ import TextField from '../../../shared/TextField';
 import TextArea from '../../../shared/TextArea';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
-import { addItem } from '../../../utils';
+import { addItem, migrateSection } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 import ItemHeading from '../../../shared/ItemHeading';
@@ -35,19 +36,23 @@ const WorkTab = ({ data, config, onChange }) => {
 
       <AddItem heading={config.work.heading} dispatch={dispatch} />
 
-      {
-        data.work.map((x, index) => (
-          <Item
-            dispatch={dispatch}
-            first={index === 0}
-            index={index}
-            item={x}
-            key={x.id}
-            last={index === data.work.length - 1}
-            onChange={onChange} 
-          />
-        ))
-      }
+      <ReactSortable
+        list={data.work}
+        setList={newState => migrateSection(dispatch, 'work', newState)}
+      >
+        {
+          data.work.map((x, index) => (
+            <Item
+              dispatch={dispatch}
+              index={index}
+              item={x}
+              key={x.id}
+              onChange={onChange} 
+            />
+          ))
+        }
+      </ReactSortable>
+
     </>
   );
 };
@@ -137,7 +142,7 @@ const AddItem = ({ heading, dispatch }) => {
   };
 
   return (
-    <div className="my-4 border border-gray-200 rounded p-5 hover:shadow-listItem">
+    <div className="my-4 border border-gray-200 rounded p-5 ">
       <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
       {
@@ -154,22 +159,20 @@ const AddItem = ({ heading, dispatch }) => {
   );
 };
 
-const Item = ({ item, index, onChange, dispatch, first, last }) => {
+const Item = ({ item, index, onChange, dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const identifier = `data.work[${index}].`;
   const itemRef = useRef(null);
 
   return (
-    <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
+    <div className="my-4 bg-white border border-gray-200 rounded p-5 animate__animated " ref={itemRef}>
       <ItemHeading title={item.company} setOpen={setOpen} isOpen={isOpen} />
 
-      <div className={`${isOpen ? 'hidden' : 'block'} mt-3 shortcut-actions`}>
+      <div className={`${isOpen ? 'hidden' : 'block'} mt-3 `}>
         <ItemActions
           dispatch={dispatch}
-          first={first}
           identifier={identifier}
           item={item}
-          last={last}
           onChange={onChange}
           itemRef={itemRef}
           setOpen={setOpen}
@@ -182,10 +185,8 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
 
         <ItemActions
           dispatch={dispatch}
-          first={first}
           identifier={identifier}
           item={item}
-          last={last}
           onChange={onChange}
           itemRef={itemRef}
           setOpen={setOpen}
