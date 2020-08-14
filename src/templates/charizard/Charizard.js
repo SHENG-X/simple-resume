@@ -161,7 +161,7 @@ const Charizard = () => {
       </div>
     );
 
-  const SkillItem = x => (
+  const SkillItem = x => x.enable && (
     <span
       key={x.id}
       className="text-xs py-1 rounded-full px-2 font-medium my-2 mr-2"
