@@ -1,7 +1,6 @@
 import React, {
     useState,
 } from 'react';
-import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
 import TextField from '../../../shared/TextField';
