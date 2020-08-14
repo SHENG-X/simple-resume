@@ -120,7 +120,7 @@ const AddItem = ({ heading, dispatch }) => {
   };
 
   return (
-    <div className="my-4 border border-gray-200 rounded p-5 hover:shadow-listItem">
+    <div className="my-4 border border-gray-200 rounded p-5 ">
       <ItemHeading heading={heading} setOpen={setOpen} isOpen={isOpen} />
 
       {
@@ -143,10 +143,10 @@ const Item = ({ item, index, onChange, dispatch, first, last }) => {
   const itemRef = useRef(null);
 
   return (
-    <div className="my-4 border border-gray-200 rounded p-5 animate__animated hover:shadow-listItem" ref={itemRef}>
+    <div className="my-4 border border-gray-200 rounded p-5 animate__animated " ref={itemRef}>
       <ItemHeading title={item.title} setOpen={setOpen} isOpen={isOpen} />
 
-      <div className={`${isOpen ? 'hidden' : 'block' } mt-3 shortcut-actions`}>
+      <div className={`${isOpen ? 'hidden' : 'block' } mt-3 `}>
         <ItemActions
           dispatch={dispatch}
           first={first}
