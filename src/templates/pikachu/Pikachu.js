@@ -57,7 +57,7 @@ const Pikachu = () => {
     </div>
   );
 
-  const SkillItem = x => (
+  const SkillItem = x => x.enable && (
     <span
       key={x.id}
       className="leading-none rounded-lg text-sm font-medium bg-gray-300 py-3 my-1 px-4"

@@ -5,8 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from '../../../context/AppContext';
 import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
-import { addItem, deleteItem, animateRemove, migrateSection } from '../../../utils';
+import { addItem, migrateSection } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
+import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
 
 const SkillsTab = ({ data, config, onChange }) => {
@@ -64,7 +65,8 @@ const AddItem = ({ heading, dispatch }) => {
   const [isOpen, setOpen] = useState(false);
   const [item, setItem] = useState({
     id: uuidv4(),
-    skill: ''
+    skill: '',
+    enable: true,
   });
 
   const add = () => {
@@ -74,7 +76,8 @@ const AddItem = ({ heading, dispatch }) => {
 
     setItem({
         id: uuidv4(),
-        skill: ''
+        skill: '',
+        enable: true,
     });
   };
 
@@ -104,24 +107,23 @@ const Item = ({ item, index, onChange, dispatch }) => {
   const itemRef = useRef(null);
 
   return (
-    <div className="my-4 grid grid-cols-12 animate__animated" ref={itemRef}>
+    <div className={`my-4 grid grid-cols-12 animate__animated ${item.enable ? '' :'opacity-50 hover:opacity-75'}`} ref={itemRef}>
       <div className="col-span-9">
         <Form item={item} onChange={v => onChange(identifier, {...item, skill: v})} />
       </div>
-      <div className="col-span-1"/>
 
-      <div className="col-span-1"/>
+      <div className="col-span-3">
+        <ItemActions
+          dispatch={dispatch}
+          identifier={identifier}
+          item={item}
+          setOpen={()=>{}}
+          onChange={onChange}
+          itemRef={itemRef}
+          type="skills"
+        />
+      </div>
 
-      <button
-        type="button"
-        onClick={() => animateRemove(itemRef, ()=> {
-            deleteItem(dispatch, 'skills', item)
-          })
-        }
-        className="col-span-1 text-gray-600 hover:text-red-600 text-sm font-medium flex justify-center items-center"
-      >
-          <i className="material-icons font-bold text-xl">close</i>
-      </button>
     </div>
   );
 };

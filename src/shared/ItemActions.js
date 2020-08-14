@@ -1,36 +1,40 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-
-import Checkbox from './Checkbox';
 import { deleteItem, animateRemove } from '../utils';
 
 const ItemActions = ({ dispatch, identifier, item, onChange, type, itemRef, setOpen }) => {
-  const { t } = useTranslation();
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-end h-full">
       <div className="flex items-center">
-        <Checkbox
-          size="2.25rem"
-          checked={item.enable}
-          onChange={v => {
-              onChange(`${identifier}enable`, v);
-          }}
-        />
+        {
+          item.enable ? 
+          <button 
+            type="button"
+            onClick={() => onChange(`${identifier}enable`, false)}
+            className="p-1 text-gray-600 hover:text-red-600 flex justify-center items-center"
+          >
+            <i className="material-icons font-bold text-2xl">visibility</i>
+          </button>
+          :
+          <button 
+            type="button"
+            onClick={() => onChange(`${identifier}enable`, true)}
+            className="p-1 text-gray-600 hover:text-green-600 flex justify-center items-center"
+          >
+            <i className="material-icons font-bold text-2xl">visibility_off</i>
+          </button>
+        }
 
-        <button
+        <button 
           type="button"
           onClick={() => {
             setOpen(false);
             animateRemove(itemRef, ()=>{deleteItem(dispatch, type, item);})
             }
           }
-          className="ml-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-2 px-5 rounded"
+          className="p-1 text-gray-600 hover:text-red-600 flex justify-center items-center"
         >
-          <div className="flex items-center">
-            <i className="material-icons mr-2 font-bold text-base">delete</i>
-            <span className="text-sm">{t('buttons.delete.label')}</span>
-          </div>
+          <i className="material-icons font-bold text-2xl">delete</i>
         </button>
       </div>
     </div>

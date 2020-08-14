@@ -165,7 +165,7 @@ const Togepi = () =>{
       </div>
   );
 
-  const SkillItem = x => (
+  const SkillItem = x => x.enable && (
     <li
       key={x.id}
       className="text-xs py-1 font-medium"
