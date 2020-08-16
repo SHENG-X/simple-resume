@@ -6,7 +6,6 @@ import set from 'lodash/set';
 
 import TextField from '../../../shared/TextField';
 import AppContext from '../../../context/AppContext';
-import Checkbox from '../../../shared/Checkbox';
 import TextArea from '../../../shared/TextArea';
 import { addItem, migrateSection } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
@@ -21,10 +20,24 @@ const AwardsTab = ({ data, config, onChange }) => {
     <>
       <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
-          <Checkbox
-            checked={config.awards.enable}
-            onChange={v => onChange('config.awards.enable', v)}
-          />
+          {
+            config.awards.enable ? 
+            <button 
+              type="button"
+              onClick={() => onChange(`config.awards.enable`, false)}
+              className="p-1 text-gray-600 hover:text-red-600 flex justify-center items-center"
+            >
+              <i className="material-icons font-bold text-2xl">visibility</i>
+            </button>
+            :
+            <button 
+              type="button"
+              onClick={() => onChange(`config.awards.enable`, true)}
+              className="p-1 text-gray-600 hover:text-green-600 flex justify-center items-center"
+            >
+              <i className="material-icons font-bold text-2xl">visibility_off</i>
+            </button>
+          }
         </div>
         <div className="col-span-5">
           <TextField

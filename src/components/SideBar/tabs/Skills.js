@@ -3,7 +3,6 @@ import { ReactSortable } from "react-sortablejs";
 import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from '../../../context/AppContext';
-import Checkbox from '../../../shared/Checkbox';
 import TextField from '../../../shared/TextField';
 import { addItem, migrateSection } from '../../../utils';
 import ItemHeading from '../../../shared/ItemHeading';
@@ -18,10 +17,24 @@ const SkillsTab = ({ data, config, onChange }) => {
     <>
       <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
-          <Checkbox
-            checked={config.skills.enable}
-            onChange={v => onChange('config.skills.enable', v)}
-          />
+          {
+            config.skills.enable ? 
+            <button 
+              type="button"
+              onClick={() => onChange(`config.skills.enable`, false)}
+              className="p-1 text-gray-600 hover:text-red-600 flex justify-center items-center"
+            >
+              <i className="material-icons font-bold text-2xl">visibility</i>
+            </button>
+            :
+            <button 
+              type="button"
+              onClick={() => onChange(`config.skills.enable`, true)}
+              className="p-1 text-gray-600 hover:text-green-600 flex justify-center items-center"
+            >
+              <i className="material-icons font-bold text-2xl">visibility_off</i>
+            </button>
+          }
         </div>
         <div className="col-span-5">
           <TextField

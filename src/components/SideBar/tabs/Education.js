@@ -7,7 +7,6 @@ import set from 'lodash/set';
 import TextField from '../../../shared/TextField';
 import TextArea from '../../../shared/TextArea';
 import AppContext from '../../../context/AppContext';
-import Checkbox from '../../../shared/Checkbox';
 import { addItem, migrateSection } from '../../../utils';
 import ItemActions from '../../../shared/ItemActions';
 import AddItemButton from '../../../shared/AddItemButton';
@@ -21,10 +20,24 @@ const EducationTab = ({ data, config, onChange }) => {
     <>
       <div className="mb-6 grid grid-cols-6 items-center">
         <div className="col-span-1">
-          <Checkbox
-            checked={config.education.enable}
-            onChange={v => onChange('config.education.enable', v)}
-          />
+          {
+            config.education.enable ? 
+            <button 
+              type="button"
+              onClick={() => onChange(`config.education.enable`, false)}
+              className="p-1 text-gray-600 hover:text-red-600 flex justify-center items-center"
+            >
+              <i className="material-icons font-bold text-2xl">visibility</i>
+            </button>
+            :
+            <button 
+              type="button"
+              onClick={() => onChange(`config.education.enable`, true)}
+              className="p-1 text-gray-600 hover:text-green-600 flex justify-center items-center"
+            >
+              <i className="material-icons font-bold text-2xl">visibility_off</i>
+            </button>
+          }
         </div>
 
         <div className="col-span-5">
