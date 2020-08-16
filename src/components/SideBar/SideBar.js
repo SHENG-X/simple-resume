@@ -16,14 +16,13 @@ import ColorsTab from './tabs/Colors';
 import FontsTab from './tabs/Fonts';
 import ActionsTab from './tabs/Actions';
 import AboutTab from './tabs/About';
-import SettingsTab from './tabs/Settings';
 
 const Sidebar = () => {
   const { t } = useTranslation('sideBar');
 
   const context = useContext(AppContext);
   const { state, dispatch } = context;
-  const { data, theme, settings, config } = state;
+  const { data, theme, config } = state;
   const tabs = [
     {
       key: 'templates',
@@ -72,10 +71,6 @@ const Sidebar = () => {
     {
       key: 'actions',
       name: t('actions.title'),
-    },
-    {
-      key: 'settings',
-      name: t('settings.title'),
     },
     {
       key: 'about',
@@ -176,11 +171,6 @@ const Sidebar = () => {
             theme={theme} 
             config={config}
             dispatch={dispatch} 
-        />;
-      case 'settings':
-        return <SettingsTab 
-            settings={settings} 
-            onChange={onChange} 
         />;
       case 'about':
         return <AboutTab />;
