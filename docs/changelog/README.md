@@ -6,6 +6,11 @@ title: Changelog
 
 All notable changes to this project will be documented in this file.
 
+### August 13, 2020
+
+- All items is sortable by using drag/drop. 
+- Show/Hide buttons are placed for displaying or hiding an item on the resume.
+
 ### July 1, 2020
 
 - Replaced old textarea with new textarea. The new textarea supports multilevel lists and spellchecker.
