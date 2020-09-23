@@ -93,3 +93,8 @@ Animate.css is a library of ready-to-use, cross-browser animations for use in yo
 
 [Learn more &rarr; ](https://animate.style/)
 
+## Sortable.js
+
+Sortable — is a JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery required. Supports Meteor, AngularJS, React, Polymer, Vue, Ember, Knockout and any CSS library, e.g. Bootstrap.
+
+[Learn more &rarr; ](https://sortablejs.github.io/Sortable/)
