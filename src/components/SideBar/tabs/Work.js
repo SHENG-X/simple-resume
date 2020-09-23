@@ -182,7 +182,7 @@ const Item = ({ item, index, onChange, dispatch }) => {
 
   return (
     <div className={`my-4 bg-white border border-gray-200 rounded p-5 animate__animated ${item.enable ? '' :'opacity-50 hover:opacity-75'}`} ref={itemRef}>
-      <ItemHeading title={item.company} setOpen={setOpen} isOpen={isOpen}>
+      <ItemHeading title={item.company} subtitle={item.position} setOpen={setOpen} isOpen={isOpen}>
         <div className={`${isOpen ? 'hidden' : 'block'}`}>
           <ItemActions
             dispatch={dispatch}
