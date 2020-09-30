@@ -229,7 +229,7 @@ const Gengar = () => {
         style={{'minHeight': 'inherit'}}
       >
         <div
-          className="col-span-4 px-6 py-8"
+          className="col-span-4 px-6 pt-8"
           style={{ backgroundColor: theme.colors.accent, color: theme.colors.background }}
         >
           <div className="flex items-center">
@@ -277,7 +277,7 @@ const Gengar = () => {
         </div>
 
         <div
-          className="col-span-4 px-6 py-8"
+          className="col-span-4 px-6 pt-4 pb-8"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
           <Skills />
@@ -285,7 +285,7 @@ const Gengar = () => {
           <Certifications />
         </div>
 
-        <div className="col-span-8 px-6 py-8">
+        <div className="col-span-8 px-6 pt-4 pb-8">
           <Work />
           <Awards />
           <References />
