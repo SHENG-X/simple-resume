@@ -51,7 +51,7 @@ const Gengar = () => {
   const Summary = () =>
     data.basics.summary &&
     config.summary.enable && (
-      <div className="flex flex-col justify-center items-start mb-6">
+      <div className="flex flex-col justify-center items-start mb-3">
         <Heading title={config.summary.heading} />
         <TextArea
           value={data.basics.summary}
@@ -270,7 +270,7 @@ const Gengar = () => {
         </div>
 
         <div
-          className="col-span-8 px-6 py-8"
+          className="col-span-8 px-6 pt-8"
           style={{ backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)` }}
         >
           <Summary />
